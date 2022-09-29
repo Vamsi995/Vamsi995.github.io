@@ -47,8 +47,11 @@ function Sidenav() {
             
             {navData.map((item, index) => {
               return (
-                <motion.li key={index} className="nav-text" whileHover={{scale:1.2, originX:0, color:"black", "font-weight":"bolder"}} transition={{type:"spring", stiffness:300, damping:18}}>
-                  <NavLink to={item.path} activeClassName="selected">
+                <motion.li key={index} className="nav-text" whileHover={{scale:1.2, originX:0, color:"black", fontFamily:"sans-serif", "font-weight":"bolder"}} transition={{type:"spring", stiffness:300, damping:18}}>
+                  <NavLink to={item.path}  style={({ isActive }) => ({
+              "font-weight": isActive ? "bolder" : "lighter",
+              "fontFamily": isActive ? 'sans-serif': 'Manrope'
+            })} end>
                     {item.title.toUpperCase()}
                   </NavLink>
                 </motion.li>

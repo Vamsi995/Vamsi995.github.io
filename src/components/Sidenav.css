@@ -37,10 +37,6 @@
     top: 18%;
 }
 
-.selected {
-    color: "black";
-    font-weight: bolder;
-}
 
 .nav-text {
     display: flex;
@@ -50,6 +46,7 @@
     align-items: center;
     list-style: none;
     height: 50px;
+    font-weight: normal;
 }
 
 
