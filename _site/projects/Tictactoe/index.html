@@ -1,0 +1,551 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Tic Tac Toe on FPGA | Alisetti Sai Vamsi</title>
+<meta name="description" content="Meet.me is a smart online collaboration tool that supports seamless screen sharing and whiteboard features integrated with chat messaging system.">
+
+
+  <meta name="author" content="Alisetti Sai Vamsi">
+  
+  <meta property="article:author" content="Alisetti Sai Vamsi">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Alisetti Sai Vamsi">
+<meta property="og:title" content="Tic Tac Toe on FPGA">
+<meta property="og:url" content="http://localhost:4000/projects/Tictactoe/">
+
+
+  <meta property="og:description" content="Meet.me is a smart online collaboration tool that supports seamless screen sharing and whiteboard features integrated with chat messaging system.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/projects/Tictactoe/Teaser.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-09-25T20:52:38+05:30">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/projects/Tictactoe/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Alisetti Sai Vamsi",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/landing/logo2.png" alt="Alisetti Sai Vamsi"></a>
+        
+        <a class="site-title" href="/">
+          Alisetti Sai Vamsi
+          <span class="site-subtitle">Portfolio</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/research/">Research</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/">Projects</a>
+            </li><li class="masthead__menu-item">
+              <a href="/education/">Education</a>
+            </li><li class="masthead__menu-item">
+              <a href="/achievements/">Achievements</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About Me</a>
+            </li><li class="masthead__menu-item">
+              <a href="/misc/">Misc</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">></span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/projects" itemprop="item"><span itemprop="name">Projects</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">></span>
+      
+    
+      
+      
+        <li class="current">Tic Tac Toe on FPGA</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true},
+      jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
+      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
+      TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+      equationNumbers: {
+      autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      <h3>Link</h3>
+      <p><a href="https://drive.google.com/drive/folders/1UOmY8kUEWy_Of2fpiQGqjFD85GuF4TUJ?usp=sharing">https://drive.google.com/drive/folders/1UOmY8kUEWy_Of2fpiQGqjFD85GuF4TUJ?usp=sharing</a></p>
+
+      
+    
+      
+      <h3>Role</h3>
+      <p>Team Lead</p>
+
+      
+    
+      
+      <h3>Responsibilities</h3>
+      <p>Responsible for design of the circuit and implementation of the logic on fpga using verilog HDL</p>
+
+      
+    
+      
+      <h3>Technology Frameworks & Languages</h3>
+      <p>Verilog HDL, Xilink Design Suite, FPGA</p>
+
+      
+    
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Tic Tac Toe on FPGA">
+    <meta itemprop="description" content="Meet.me is a smart online collaboration tool that supports seamless screen sharing and whiteboard features integrated with chat messaging system.">
+    <meta itemprop="datePublished" content="2023-09-25T20:52:38+05:30">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/projects/Tictactoe/" class="u-url" itemprop="url">Tic Tac Toe on FPGA
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#overview">Overview</a></li><li><a href="#materials">Materials</a></li><li><a href="#theory">Theory</a><ul><li><a href="#interconnection-of-modules">Interconnection of Modules</a></li><li><a href="#debouncing-module">Debouncing Module</a></li><li><a href="#control-path-module">Control Path Module</a><ul><li><a href="#fsm-abstraction">FSM Abstraction</a></li></ul></li><li><a href="#state-transition">State Transition</a></li><li><a href="#demux-module">Demux Module</a></li></ul></li><li><a href="#procedure">Procedure</a><ul><li><a href="#implementation">Implementation</a><ul><li><a href="#win-condition">Win Condition</a></li><li><a href="#draw-condition">Draw Condition</a></li></ul></li></ul></li><li><a href="#rtl-schematic">RTL Schematic</a></li><li><a href="#conclusion">Conclusion</a></li><li><a href="#references">References</a></li><li><a href="#demo">Demo</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Tic-tac-toe originated from the ancient Roman Empire around the first century BCE, and it was called Terni Lapilli. The rules of the game differ as each player only had three pieces, moving around the empty spaces to keep playing. The first print reference of the game appears in Britain with the name “Noughts and Crosses” in 1864. 
+The name “tic-tac-toe” was renamed from “Noughts and Crosses” in the 20th century in the USA and is the earliest known game to display visuals on a video monitor. Although Tic-tac-toe appears simplistic to play, it contains 138 terminal board positions and 255,168 possible ways these terminal board positions is obtained.</p>
+
+<ul>
+  <li>The game is played on a grid that’s 3 squares by 3 squares.</li>
+  <li>You are X, your friend (or the computer in this case) is O. Players take turns putting their marks in empty squares.</li>
+  <li>The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.</li>
+  <li>When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.</li>
+</ul>
+
+<h1 id="overview">Overview</h1>
+
+<p>TIC-TAC-TOE game is programmed in ZYBO Board via Verilog. The game consists of 9 push buttons in the form of a 3 x 3 grid, corresponding to the inputs of the user. It also consists of a 3x3 LED matrix with each cell consisting of a RED LED and a GREEN LED where RED corresponds to X and GREEN corresponds to Y.  There are 3 LEDs to indicate a win, draw, and illegal move. 
+The players take turns alternatively.  On each turn when the player pushes a button corresponding LEDs start to glow at the respective grid location. Based on the player’s status the corresponding indicator LED will glow.</p>
+
+<h1 id="materials">Materials</h1>
+
+<ul>
+  <li>FPGA - ZYBO</li>
+  <li>Bread Board</li>
+  <li>9 x Red LEDs and Green LEDs</li>
+  <li>Jumper Wires</li>
+  <li>9 x Push Button</li>
+  <li>18 x Resistors (330 Ω)</li>
+</ul>
+
+<h1 id="theory">Theory</h1>
+
+<h2 id="interconnection-of-modules">Interconnection of Modules</h2>
+
+<p><img src="/assets/images/projects/Tictactoe/Interconnection.png" alt="" /></p>
+
+<h2 id="debouncing-module">Debouncing Module</h2>
+<p>Bouncing is the tendency of any two metal contacts in an electronic device to generate multiple signals as the contacts close or open; debouncing is any kind of hardware device or software that ensures that only a single signal will be acted upon for a single opening or closing of a contact.</p>
+
+<p><img src="/assets/images/projects/Tictactoe/Debouncer.png" alt="" /></p>
+
+<p>The three main parts are:</p>
+
+<ul>
+  <li>
+    <p><strong>Sample Pulse Generator</strong> - A counter that increments every clock edge. When the maximum is reached a sample pulse is generated and the count value resets to zero. The sample pulse is used to sample the switch input.</p>
+  </li>
+  <li>
+    <p><strong>Synchroniser</strong> - The Synchroniser makes sure the switch signal is synchronized with the system clock, the double flip-flop minimizes the chance of metastability.</p>
+  </li>
+  <li>
+    <p><strong>Debouncer</strong> - A counter that is incremented every sample pulse whilst the switch is pressed. When the switch is not pressed the counter is reset to zero. If the counter is at its maximum, the debouncer output is high, otherwise, it is low.</p>
+  </li>
+</ul>
+
+<h2 id="control-path-module">Control Path Module</h2>
+
+<h3 id="fsm-abstraction">FSM Abstraction</h3>
+
+<p><img src="/assets/images/projects/Tictactoe/Debouncer.png" alt="" /></p>
+
+<p>The game starts with player 1 and switches every turn. The win cases are hard-coded and are being checked in each iteration. The draw case is reached if 9 moves are done. The game ends by staying in the finish state until reset.</p>
+
+<h2 id="state-transition">State Transition</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>LABLE</th>
+      <th>TRANSITION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A</td>
+      <td>Inputs = 0</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td>Inputs = 0</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>Reset = 0</td>
+    </tr>
+    <tr>
+      <td>D</td>
+      <td>Win and draw = 0</td>
+    </tr>
+    <tr>
+      <td>E</td>
+      <td>Win and draw = 0</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>Reset = 1</td>
+    </tr>
+    <tr>
+      <td>G</td>
+      <td>Win or Draw = 1</td>
+    </tr>
+    <tr>
+      <td>H</td>
+      <td>Win or Draw = 1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="demux-module">Demux Module</h2>
+
+<p><strong>Demultiplexer</strong>: De-Multiplexer is a combinational circuit that performs the reverse operation of Multiplexer. It has a single input, n selection lines, and maximum of 2n outputs. The input will be connected to one of these outputs based on the values of selection lines. Since each cell on the led matrix contains two LEDs, the demux is used to determine which LED to turn on.</p>
+
+<p><img src="/assets/images/projects/Tictactoe/Demux.png" alt="" /></p>
+
+<h1 id="procedure">Procedure</h1>
+
+<p>Go through the code to understand the interconnections of different modules and implementing them in the Zybo board.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<ul>
+  <li>Follow the breadboard circuit to implement the circuit.</li>
+  <li>Take a look at the constraint file to view the mapping of the output and input ports of the Zybo to the circuit.</li>
+</ul>
+
+<h3 id="win-condition">Win Condition</h3>
+
+<p><img src="/assets/images/projects/Tictactoe/Win.jpg" alt="" /></p>
+
+<h3 id="draw-condition">Draw Condition</h3>
+<p><img src="/assets/images/projects/Tictactoe/Draw.jpg" alt="" /></p>
+
+<h1 id="rtl-schematic">RTL Schematic</h1>
+
+<p>In digital circuit design, register-transfer level ( RTL ) is a design abstraction which models a synchronous digital circuit in terms of the flow of digital signals (data) between hardware registers, and the logical operations performed on those signals.</p>
+
+<p><img src="/assets/images/projects/Tictactoe/RTL Schematic.png" alt="" /></p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>We learned how to code in Verilog effectively and efficiently and also we used some additional syntax taught in class such as genvar etc…,
+One of the major challenges was debugging the Verilog code. Accepting user input only when he presses input at the right time was the tedious task. Every time we changed a small portion of the code we had to go through the very- long process of running a synthesis, running implementation, and generating bitstream. Only then we were able to debug all the errors. To solve this issue we learned a concept of debouncing which solves this issue and implemented it on Verilog.
+We also taught to make an illegal handler which prevents the players from giving illegal inputs but we couldn’t implement it as there was some implementation error every time we include that module and we ran out of time.
+In conclusion, we would like to add by saying that this process of making it was hectic and also fun at the same time.
+Here is the final project folder TicTacToe Verilog Project. I hope you have fun implementing it!! Don’t lose to your friend :)</p>
+
+<h1 id="references">References</h1>
+
+<p>We didn’t require any additional references or help. We used the concepts learned in the lab over the semester for the implementation of our projects.</p>
+
+<h1 id="demo">Demo</h1>
+
+<div class="responsive-video-container">
+    <iframe src="https://drive.google.com/file/d/1HzEfA4KiFOs7Xj2QyuH7g9AqGqXiffEK/preview" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-09-25T20:52:38+05:30">September 25, 2023</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/projects/SparseReward/" class="pagination--pager" title="Sparse Reward Propagation for Deep Reinforcement Learning
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/vumsee_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://facebook.com/alisetti.vamsi" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+          <li><a href="https://github.com/Vamsi995" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/_v.um.see_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://stackoverflow.com/users/12236439/sai-vamsi" rel="nofollow noopener noreferrer"><i class="fab fa-stack-overflow" aria-hidden="true"></i> StackOverflow</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/sai-vamsi-alisetti/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="mailto:saivamsi.ds123@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Alisetti Sai Vamsi. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

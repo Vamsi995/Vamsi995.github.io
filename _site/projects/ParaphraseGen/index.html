@@ -1,0 +1,563 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Paraphrase Generator with T5 transformer | Alisetti Sai Vamsi</title>
+<meta name="description" content="A Paraphrase-Generator built using transformers which takes an English sentence as an input and always produces a set of unique paraphrased sentences based on sentence similarity scores.">
+
+
+  <meta name="author" content="Alisetti Sai Vamsi">
+  
+  <meta property="article:author" content="Alisetti Sai Vamsi">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Alisetti Sai Vamsi">
+<meta property="og:title" content="Paraphrase Generator with T5 transformer">
+<meta property="og:url" content="http://localhost:4000/projects/ParaphraseGen/">
+
+
+  <meta property="og:description" content="A Paraphrase-Generator built using transformers which takes an English sentence as an input and always produces a set of unique paraphrased sentences based on sentence similarity scores.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/projects/Paraphrase/nlp.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-09-25T20:52:38+05:30">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/projects/ParaphraseGen/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Alisetti Sai Vamsi",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/landing/logo2.png" alt="Alisetti Sai Vamsi"></a>
+        
+        <a class="site-title" href="/">
+          Alisetti Sai Vamsi
+          <span class="site-subtitle">Portfolio</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/research/">Research</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/">Projects</a>
+            </li><li class="masthead__menu-item">
+              <a href="/education/">Education</a>
+            </li><li class="masthead__menu-item">
+              <a href="/achievements/">Achievements</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About Me</a>
+            </li><li class="masthead__menu-item">
+              <a href="/misc/">Misc</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">></span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/projects" itemprop="item"><span itemprop="name">Projects</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">></span>
+      
+    
+      
+      
+        <li class="current">Paraphrase Generator with T5 transformer</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true},
+      jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
+      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
+      TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+      equationNumbers: {
+      autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      <h3>Link</h3>
+      <p><a href="https://github.com/Vamsi995/Paraphrase-Generator">https://github.com/Vamsi995/Paraphrase-Generator</a></p>
+
+      
+    
+      
+      <h3>Role</h3>
+      <p>Research Intern At UST Global</p>
+
+      
+    
+      
+      <h3>Responsibilities</h3>
+      <p>Worked on building production level Paraphrase Generator using SOTA NLP transformer architectures. Developed a web API using streamlit and flask for model inference. Built a data generation CLI tool using the paraphrase generator for creating datasets with similar semantics. Contributed a model to the open-source hugging face library. https://huggingface.co/Vamsi/T5_Paraphrase_Paws</p>
+
+      
+    
+      
+      <h3>Technology Frameworks & Languages</h3>
+      <p>Python, PyTorch, Co-lab Notebooks, Streamlit, Flask, Docker</p>
+
+      
+    
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Paraphrase Generator with T5 transformer">
+    <meta itemprop="description" content="A Paraphrase-Generator built using transformers which takes an English sentence as an input and always produces a set of unique paraphrased sentences based on sentence similarity scores.">
+    <meta itemprop="datePublished" content="2023-09-25T20:52:38+05:30">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/projects/ParaphraseGen/" class="u-url" itemprop="url">Paraphrase Generator with T5 transformer
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#getting-started">Getting Started</a><ul><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#installing">Installing</a></li></ul></li><li><a href="#running-the-web-app">Running the web app</a></li><li><a href="#general-usage">General Usage</a></li><li><a href="#dockerfile">Dockerfile</a></li><li><a href="#built-with">Built With</a></li><li><a href="#authors">Authors</a></li><li><a href="#citing">Citing</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>A Paraphrase-Generator built using transformers which takes an English sentence as an input and produces a set of paraphrased sentences.
+This is an NLP task of conditional text-generation. The model used here is the <a href="https://huggingface.co/transformers/model_doc/t5.html#t5forconditionalgeneration">T5ForConditionalGeneration</a> from the <a href="https://huggingface.co/transformers">huggingface transformers</a>  library. 
+This model is trained on the <a href="https://github.com/google-research-datasets/paws">Google’s PAWS Dataset</a> and the model is saved in the transformer model hub of hugging face library under the name <a href="https://huggingface.co/Vamsi/T5_Paraphrase_Paws">Vamsi/T5_Paraphrase_Paws</a>.</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<ul>
+  <li>Streamlit library</li>
+  <li>Huggingface transformers library</li>
+  <li>Pytorch</li>
+  <li>Tensorflow</li>
+</ul>
+
+<h3 id="installing">Installing</h3>
+
+<ul>
+  <li>Streamlit</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install streamlit
+</code></pre></div></div>
+
+<ul>
+  <li>Huggingface transformers library
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install transformers
+</code></pre></div>    </div>
+  </li>
+  <li>Tensorflow
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install --upgrade tensorflow
+</code></pre></div>    </div>
+  </li>
+  <li>Pytorch
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Head to the docs and install a compatible version
+https://pytorch.org/
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="running-the-web-app">Running the web app</h2>
+
+<ul>
+  <li>Clone the repository
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone [repolink] 
+</code></pre></div>    </div>
+  </li>
+  <li>Running streamlit app</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd Streamlit
+$ streamlit run paraphrase.py
+</code></pre></div></div>
+
+<ul>
+  <li>Running the flask app</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd Server
+
+$ python server.py
+</code></pre></div></div>
+
+<p>The initial server call will take some time as it downloads the model parameters. The later calls will be relatively faster as it will store the model params in the cahce.</p>
+
+<p><img src="/assets/images/projects/Paraphrase/Paraphrase.png" alt="" /></p>
+
+<p><img src="/assets/images/projects/Paraphrase/TextualSimilarity.png" alt="" /></p>
+
+<h2 id="general-usage">General Usage</h2>
+<p>PyTorch and TF models are available
+​</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">AutoModelForSeq2SeqLM</span>
+
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="p">.</span><span class="nf">from_pretrained</span><span class="p">(</span><span class="sh">"</span><span class="s">Vamsi/T5_Paraphrase_Paws</span><span class="sh">"</span><span class="p">)</span>  
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForSeq2SeqLM</span><span class="p">.</span><span class="nf">from_pretrained</span><span class="p">(</span><span class="sh">"</span><span class="s">Vamsi/T5_Paraphrase_Paws</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">device</span><span class="p">(</span><span class="sh">"</span><span class="s">cuda</span><span class="sh">"</span> <span class="k">if</span> <span class="n">torch</span><span class="p">.</span><span class="n">cuda</span><span class="p">.</span><span class="nf">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="sh">"</span><span class="s">cpu</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="sh">"</span><span class="s">This is something which i cannot understand at all</span><span class="sh">"</span>
+
+<span class="n">text</span> <span class="o">=</span>  <span class="sh">"</span><span class="s">paraphrase: </span><span class="sh">"</span> <span class="o">+</span> <span class="n">sentence</span> <span class="o">+</span> <span class="sh">"</span><span class="s"> &lt;/s&gt;</span><span class="sh">"</span>
+
+<span class="n">encoding</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="nf">encode_plus</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">pad_to_max_length</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="sh">"</span><span class="s">pt</span><span class="sh">"</span><span class="p">)</span>
+
+<span class="n">input_ids</span><span class="p">,</span> <span class="n">attention_masks</span> <span class="o">=</span> <span class="n">encoding</span><span class="p">[</span><span class="sh">"</span><span class="s">input_ids</span><span class="sh">"</span><span class="p">].</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">encoding</span><span class="p">[</span><span class="sh">"</span><span class="s">attention_mask</span><span class="sh">"</span><span class="p">].</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="nf">generate</span><span class="p">(</span>
+    <span class="n">input_ids</span><span class="o">=</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">attention_mask</span><span class="o">=</span><span class="n">attention_masks</span><span class="p">,</span>
+    <span class="n">max_length</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span>
+    <span class="n">do_sample</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">top_k</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">top_p</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+    <span class="n">early_stopping</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">num_return_sequences</span><span class="o">=</span><span class="mi">5</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">output</span> <span class="ow">in</span> <span class="n">outputs</span><span class="p">:</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">skip_special_tokens</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">clean_up_tokenization_spaces</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<h2 id="dockerfile">Dockerfile</h2>
+
+<p>The repository also contains a minimal reproducible Dockerfile that can be used to spin up a server with the API endpoints to perform text paraphrasing.</p>
+
+<p><em>Note</em>: The Dockerfile uses the built-in Flask development server, hence it’s not recommended for production usage. It should be replaced with a production-ready WSGI server.</p>
+
+<p>After cloning the repository, starting the local server it’s a two lines script:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build -t paraphrase .
+docker run -p 5000:5000 paraphrase
+</code></pre></div></div>
+
+<p>and then the API is available on <code class="language-plaintext highlighter-rouge">localhost:5000</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -XPOST localhost:5000/run_forward \
+-H 'content-type: application/json' \
+-d '{"sentence": "What is the best paraphrase of a long sentence that does not say much?", "decoding_params": {"tokenizer": "", "max_len": 512, "strategy": "", "top_k": 168, "top_p": 0.95, "return_sen_num": 3}}'
+</code></pre></div></div>
+
+<h2 id="built-with">Built With</h2>
+
+<ul>
+  <li><a href="https://www.streamlit.io/">Streamlit</a> - Fastest way for building data apps</li>
+  <li><a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a> - Backend framework</li>
+  <li><a href="https://huggingface.co/">Transformers-Huggingface</a> - On a mission to solve NLP, one commit at a time. Transformers Library.</li>
+</ul>
+
+<h2 id="authors">Authors</h2>
+<ul>
+  <li><a href="https://github.com/Vamsi995">Sai Vamsi Alisetti</a></li>
+</ul>
+
+<h2 id="citing">Citing</h2>
+
+<div class="language-bibtex highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">@misc</span><span class="p">{</span><span class="nl">paraphrasegen</span><span class="p">,</span>
+    <span class="na">author</span> <span class="p">=</span> <span class="s">{Sai Vamsi Alisetti}</span><span class="p">,</span>
+    <span class="na">title</span> <span class="p">=</span> <span class="p">,</span>
+    <span class="na">year</span> <span class="p">=</span> <span class="s">{2020}</span><span class="p">,</span>
+    <span class="na">publisher</span> <span class="p">=</span> <span class="s">{GitHub}</span><span class="p">,</span>
+    <span class="na">journal</span> <span class="p">=</span> <span class="s">{GitHub repository}</span><span class="p">,</span>
+    <span class="na">howpublished</span> <span class="p">=</span> <span class="s">{\url{https://github.com/Vamsi995/Paraphrase-Generator}}</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>List of publications using Paraphrase-Generator (please open a pull request to add missing entries):</p>
+
+<p><a href="https://arxiv.org/pdf/2110.01509.pdf">DeepA2: A Modular Framework for Deep Argument Analysis
+with Pretrained Neural Text2Text Language Models</a></p>
+
+<p><a href="https://www.sloansportsconference.com/research-papers/sports-narrative-enhancement-with-natural-language-generation">Sports Narrative Enhancement with Natural Language
+Generation</a></p>
+
+<p><a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/643e347250cf9289e5a2a6c1ed5ee42e-Paper-Datasets_and_Benchmarks.pdf">EHRSQL: A Practical Text-to-SQL Benchmark for
+Electronic Health Records</a></p>
+
+<p><a href="https://fbi.h-da.de/fileadmin/Personen/fbi1119/Michel-Masterarbeit.pdf">Wissensgenerierung für deutschprachige
+Chatbots</a></p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-09-25T20:52:38+05:30">September 25, 2023</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/projects/Meetme/" class="pagination--pager" title="Meet.me
+">Previous</a>
+    
+    
+      <a href="/projects/Pesticide/" class="pagination--pager" title="Autonomous Pesticide Spraying Robot
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/vumsee_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://facebook.com/alisetti.vamsi" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+          <li><a href="https://github.com/Vamsi995" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/_v.um.see_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://stackoverflow.com/users/12236439/sai-vamsi" rel="nofollow noopener noreferrer"><i class="fab fa-stack-overflow" aria-hidden="true"></i> StackOverflow</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/sai-vamsi-alisetti/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="mailto:saivamsi.ds123@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Alisetti Sai Vamsi. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,588 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>IIT Palakkad Project Allocation Portal | Alisetti Sai Vamsi</title>
+<meta name="description" content="We built a project allocation portal that reduces the drudgery of manual allocation of  projects by using a Gale Shapely type algorithm with two sided preference. This portal is currently being used at my university for project allocation of capstone projects.">
+
+
+  <meta name="author" content="Alisetti Sai Vamsi">
+  
+  <meta property="article:author" content="Alisetti Sai Vamsi">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Alisetti Sai Vamsi">
+<meta property="og:title" content="IIT Palakkad Project Allocation Portal">
+<meta property="og:url" content="http://localhost:4000/projects/ProjectAll/">
+
+
+  <meta property="og:description" content="We built a project allocation portal that reduces the drudgery of manual allocation of  projects by using a Gale Shapely type algorithm with two sided preference. This portal is currently being used at my university for project allocation of capstone projects.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/projects/ProjectAllocation/Teaser.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2023-09-25T20:52:38+05:30">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/projects/ProjectAll/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Alisetti Sai Vamsi",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/landing/logo2.png" alt="Alisetti Sai Vamsi"></a>
+        
+        <a class="site-title" href="/">
+          Alisetti Sai Vamsi
+          <span class="site-subtitle">Portfolio</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/research/">Research</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/">Projects</a>
+            </li><li class="masthead__menu-item">
+              <a href="/education/">Education</a>
+            </li><li class="masthead__menu-item">
+              <a href="/achievements/">Achievements</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">About Me</a>
+            </li><li class="masthead__menu-item">
+              <a href="/misc/">Misc</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">></span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/projects" itemprop="item"><span itemprop="name">Projects</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">></span>
+      
+    
+      
+      
+        <li class="current">IIT Palakkad Project Allocation Portal</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true},
+      jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
+      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
+      TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+      equationNumbers: {
+      autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      <h3>Link</h3>
+      <p><a href="https://github.com/Vamsi995/Project-Allocation">https://github.com/Vamsi995/Project-Allocation</a></p>
+
+      
+    
+      
+      <h3>Role</h3>
+      <p>Team Lead</p>
+
+      
+    
+      
+      <h3>Responsibilities</h3>
+      <p>Built the end-to-end application, both backend and frontend</p>
+
+      
+    
+      
+      <h3>Technology Frameworks & Languages</h3>
+      <p>Node.js, MongoDB, Express.js, Angular, NGINX</p>
+
+      
+    
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="IIT Palakkad Project Allocation Portal">
+    <meta itemprop="description" content="We built a project allocation portal that reduces the drudgery of manual allocation of  projects by using a Gale Shapely type algorithm with two sided preference. This portal is currently being used at my university for project allocation of capstone projects.">
+    <meta itemprop="datePublished" content="2023-09-25T20:52:38+05:30">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/projects/ProjectAll/" class="u-url" itemprop="url">IIT Palakkad Project Allocation Portal
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#overview">Overview</a></li><li><a href="#allocation-algorithm">Allocation Algorithm</a></li><li><a href="#technologies-used-to-build-a-complete-end-to-end-solution">Technologies Used to Build a Complete End-to-End Solution</a></li><li><a href="#summary-and-conclusions">Summary and Conclusions</a></li><li><a href="#references">References</a></li><li><a href="#demo">Demo</a><ul><li><a href="#admin-user">Admin User</a></li><li><a href="#faculty-user">Faculty User</a></li><li><a href="#student-user">Student User</a></li></ul></li><li><a href="#about-the-process">About the Process</a></li><li><a href="#flow-of-the-process">Flow of the Process</a></li><li><a href="#stages">Stages</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>Web Apps have been with us since early 2000’s. However, with today’s technology and opens source libraries, they have become an irreplaceable part of our day-to-day lives. Our initial motivations of making this portal was to reduce the drudgery people have to go through due to manual project allocation in this modern era where everything is code driven. We have seen that most of the project allocations are done using Google Docs or Excel — a tiresome and time-consuming process. So, we came up with a web-based solution that uses an algorithm to allocate projects after collecting preferences from students and mentors.</p>
+
+<h1 id="overview">Overview</h1>
+<p>We have four positions namely Students, Faculty, Co-ordinator, Super Admin. Every individual falls into one of these four positions. Each program has a co-ordinator and is supported by a set of faculty members. For e.g., a program could be a UG program of CSE, or the PG program of EE.</p>
+<ul>
+  <li><strong>Registration &amp; Login</strong>: On the first sign-in with institute email, we parse it and decide whether the user is a student or faculty, and redirect the user accordingly.</li>
+  <li><strong>Super Admin</strong>: They are typically faculty/staff from the academic section. They can view and delete projects, faculties and students. They are in-charge of adding information about programs into the portal. When creating programs they also have to map student roll numbers to programs using a regular expression. They can also assign the program co-ordinators.</li>
+  <li><strong>Co-ordinator</strong>: Each program will have a faculty as its project co-ordinator. They are responsible for setting the deadlines for various stages of the project allocation, and dissemination of information using the portal. They can also configure parameters such as number of projects per faculty, maximum intake per project, student cap per faculty, total number of students in the program. They can also view/delete students and faculties of the program they are coordinating.</li>
+  <li><strong>Faculty</strong>: A faculty can choose to support a program by adding it in their profile. Each faculty can add, edit, delete projects. They are also given the option to record their preference among students who have opted for their projects.</li>
+  <li><strong>Students</strong>: Student’s page has a very minimalistic UI i.e., it is very intuitive to use. All the students have to do is when the appropriate stage comes to pass, they have to record their preference among the projects offered by the faculties supporting their program.</li>
+</ul>
+
+<h1 id="allocation-algorithm">Allocation Algorithm</h1>
+
+<p>Let \(\mathcal{S}=\{1,2,\ldots,m\}\) and \(\mathcal{P}= \{1,2,\ldots,n\}\) represent the set of students and projects in a program. We note that it may be possible to accommodate multiple student in a project. Let $m_j \leq m$ denote that maximum number of students that can simultaneously work on project \(j\). Each student \(i \in \mathcal{S}\) has a preference for the projects in set \(\mathcal{P}\). We denote this preference as a function \(\sigma^S_i: \mathcal{P} \to \mathcal{P}\). Note that \(\sigma^S_i\) is a permutation of set \(\mathcal{P}\), and \(\arg \max_{j \in \mathcal{P}} \sigma^S_i(j)\) and \(\arg \min_{j \in \mathcal{P}} \sigma^S_i(j)\) denote the most and least preferred projects by student \(i\). Similarly, each project (its mentor) also has a preference of over the set of students \(\mathcal{S}\). Preference of project \(j \in \mathcal{P}\) is denoted by the function \(\sigma^P_j: \mathcal{S} \to \mathcal{S}\). Note that \(\sigma^P_i\) is a permutation of set \(\mathcal{S}\), and \(\arg \max_{i \in \mathcal{S}} \sigma^P_j(i)\) and \(\arg \min_{i \in \mathcal{P}} \sigma^P_j(i)\) denote the most and least preferred student by the mentor of project \(j\). The permutations are obtained using the following approach:</p>
+
+<ul>
+  <li>\(\sigma^S_i\) (\(\textit{Students' preference}\)): In the second phase of project allocation, students are allowed to choose and order them in the decreasing order of preference. At the end of this phase, projects not chosen by a student are appended to his/her preference list. These newly added projects will be ordered in the increasing order of number students who have opted for these projects during phase two.</li>
+  <li>\(\sigma^P_i\) (\(\textit{Mentors' preference}\)): In the third phase of project allocation, project mentors are allowed to order (in decreasing order of preference) students who have opted for their projects. At the end of this phase, for each project, student who have not opted it are appended to the project’s preference list. These newly added students will be ordered in the decreasing order of their GPA.</li>
+</ul>
+
+<p>Now, given the sets \(\mathcal{S}\) and \(\mathcal{P}\), preferences \(\{\sigma^{S}_i, i \in \mathcal{S} \}\) and \(\{\sigma^{S}_j, j \in \mathcal{P} \}\). We are interested in obtaining an allocation \(f: \mathcal{S} \to \mathcal{P}\). We note that a sufficient condition for the existence of an allocation is \(\sum^n_{j=1} m_j \geq n\).
+We refer to an allocation as \textit{unstable} if there exists two tuples \((s_1, p_1)\) and \((s_2, p_2)\), where \(s_1,s_2 \in \mathcal{S}\) and \(p_1,p_2 \in \mathcal{P}\), \(s_1\) prefers \(p_2\) over \(p_1\), and \(p_2\) prefers \(s_1\) over \(s_2\). We refer to allocations that are not unstable as \textit{stable allocations}. To understand this concept better, let us consider the following example.</p>
+
+<p>Example: Consider \(\mathcal{S} = \{s_1,s_2,s_3\}\) and \(\mathcal{P} = \{p_1,p_2,p_3\}\).
+Let \(\sigma^S_1 = \{p_2, p_1, p_3\}\), \(\sigma^S_2 = \{p_1, p_2, p_3\}\), \(\sigma^S_3 = \{p_3,p_2,p_1\}\), \(\sigma^P_1 = \{s_1, s_2, s_3\}\), \(\sigma^P_2 = \{s_3, s_2, s_1\}\), and \(\sigma^P_3 = \{s_2, s_1, s_3\}\). Let us consider the allocations \(f_1 = \{(s_1, p_2), (s_2, p_1), (s_3, p_3)\}\) and \(f_2 = \{(s_1, p_3), (s_2, p_2), (s_3, p_1)\}\). \(f_1\) is a stable allocation because all students are allocated their first preference. In \(f_2\), \(s_2\) prefers \(p_1\) over \(p_2\) (project allocated to \(s_2\)) and \(p_1\) prefers \(s_1\) over its current allocation \(s_3\). Thus, \(f_2\) is an unstable allocation.</p>
+
+<p>The well-known Gale–Shapley algorithm can be used to compute a stable allocation. In its most basic form, this algorithm takes as input equal numbers of two types of participants, and an ordering for each participant giving their preference for whom to be matched to among the participants of the other type. We use Algorithm 1, a Gale–Shapley type algorithm, to allocate students to projects. Let \(\mathcal{S}_j\) denote the set of students allocated to project \(j\). We note that \(\cup^n_{j=1} \mathcal{S}_j = \mathcal{S}\). Here the set \(\mathcal{S}\) is ordered by decreasing order of CGPA of each student. This ordering improves the performance of the algorithm which we shall see in the example that follows.</p>
+
+<p><img src="/assets/images/projects/ProjectAllocation/Algorithm.png" alt="" /></p>
+
+<p>\(\textit{An example to illustrate the working of Algo. 1}\): Let \(\mathcal{S} = \{s_1, s_2, s_3, s_4\}\) and \(\mathcal{P} = \{p_1, p_2, p_3\}\). Let the GPA of students in \(\mathcal{S}\) be \(\{9,8,7,6\}\). Let the student intake for projects in \(\mathcal{P}\) be \(\{1,2,1,2\}\). Let the preferences be \(\sigma^S_1 = \{p_1, p_2, p_3, p_4\}\), \(\sigma^S_2 = \{p_1, p_2, p_4, p_3\}\), \(\sigma^S_3 = \{p_2, p_3, p_4, p_1\}\), \(\sigma^S_4 = \{p_2, p_4, p_3, p_1\}\) and \(\sigma^P_1 = \{s_3, s_4, s_2, s_1\}\), \(\sigma^P_2 = \{s_4, s_3, s_1, s_2\}\), \(\sigma^P_3 = \{s_4, s_1, s_2, s_3\}\), \(\sigma^P_4 = \{s_2, s_1, s_4, s_3\}\). We note that \(\sum^n_{j=1} m_j = 1+2+1+2 = 6 &gt; 4 = n\). Thus, a stable allocation exists. The steps executed in different iterations of the outermost loop of Algo. 1 are as follows</p>
+
+<h1 id="technologies-used-to-build-a-complete-end-to-end-solution">Technologies Used to Build a Complete End-to-End Solution</h1>
+<ul>
+  <li><strong>MongoDB</strong>: A cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schema. MongoDB is developed by MongoDB Inc. and licensed under the Server Side Public License (SSPL).</li>
+  <li><strong>Javascript</strong>: A lightweight, interpreted, or just-in-time compiled programming language with first-class functions. While it is most well-known as the scripting language for Web pages, many non-browser environments also use it, such as Node.js, Apache CouchDB and Adobe Acrobat.</li>
+  <li><strong>Node.js</strong>: An open-source, cross-platform, JavaScript run-time environment that executes JavaScript code outside of a web browser. Node.js lets developers use JavaScript to write server-side script. Conse- quently, Node.js represents a ”JavaScript everywhere” paradigm, unifying web-application development around a single programming language, rather than different languages for server and client-side scripts</li>
+  <li><strong>Express JS</strong>: A minimal and flexible Node.js framework that provides a robust set of features for web and mobile applications.</li>
+  <li><strong>Angular</strong>: A TypeScript-based open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations.</li>
+  <li><strong>NGINX</strong>: Nginx is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache.</li>
+</ul>
+
+<h1 id="summary-and-conclusions">Summary and Conclusions</h1>
+<p>We have tested the allocation algorithm with several tests cases, and it seems to work as expected. We stongly believe that the full-stack solution that we have developed will make academic project allocation an effortless and streamlined process. We also plan to enhance our solution by addressing bugs/suggestions that we receive after deploying the solution within our institute.</p>
+
+<h1 id="references">References</h1>
+<p>[1] D.Gale, L.S.Shapley, College Admissions and the Stability of Marriage,
+Available at https://www.eecs.harvard.edu/cs286r/courses/fall09/papers/galeshapley.pdf.
+[2] Applications of Gale-Shapley,
+Available at https://medium.com/@UofCalifornia/how-a-matchmaking-algorithm-saved-lives-2a65ac448698.</p>
+
+<h1 id="demo">Demo</h1>
+
+<h2 id="admin-user">Admin User</h2>
+
+<div class="responsive-video-container">
+    <iframe src="/assets/images/projects/ProjectAllocation/Admin_Remade.mp4" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<h2 id="faculty-user">Faculty User</h2>
+<div class="responsive-video-container">
+    <iframe src="/assets/images/projects/ProjectAllocation/Student.mp4" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<h2 id="student-user">Student User</h2>
+<div class="responsive-video-container">
+    <iframe src="/assets/images/projects/ProjectAllocation/Faculty_new.mp4" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+  </div>
+
+<h1 id="about-the-process">About the Process</h1>
+
+<p>There are three types of users namely Student, Faculty, Super Admin. And there are four roles namely Student, Faculty, Co-ordinator, Super Admin. We will have a quick glance on how the process works. We will go through these roles in detail first.</p>
+
+<ul>
+  <li><strong>Students</strong>: No special priviliges given. They have to give their preferences of projects.</li>
+  <li><strong>Faculty</strong>: No special priviliges given. Faculty have to select the programs which they wish to support i.e the programs in which they would like to float their projects. They are responsible for giving the student preference for the projects they floated.</li>
+  <li><strong>Co-ordinator</strong>: Co-ordinator has to import the student list containing Name,Rollno.,CGPA of each student in csv format in the Manage-&gt;Students tab to enable the students to register. Note that students not present in this list wont be able to register. Presets help to control the number of students assigned to each faculty. These are assigned by the Co-ordinator of each program and is unique to a program. Co-ordinator is responsible for setting the deadlines of the programs. Mails can be sent to the particular groups of users about the deadline. Please note that this is not automated for any of the stages i.e you have to click the Send Mails button.
+    <ul>
+      <li>
+        <p><strong>Presets</strong></p>
+
+        <ul>
+          <li>
+            <p><strong>Project Cap</strong>: This is the maximum number of projects each faculty can float. This is not set to anything in the start. If not set, no faculty will be able to add projects.</p>
+          </li>
+          <li>
+            <p><strong>Student Cap</strong>: This is the maximum number of students each project can intake. This is set to 1 by default.</p>
+          </li>
+          <li>
+            <p><strong>Students Per Faculty</strong>: This is the maximum number of students each faculty can intake considering all the projects they floated. This is not set to anything in the start.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>Priviliges</strong></p>
+        <ul>
+          <li>Co-ordinator can access the details of students &amp; faculty who opted for the program.</li>
+          <li>Co-ordinator can remove any student or faculty who opted for that program.</li>
+          <li>Co-ordinator has the access to deadlines and can change deadlines.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Super Admin</strong>
+    <ul>
+      <li>Super Admin has the access to the database.</li>
+      <li>Super Admin is responsible for selecting the program Co-ordinators before the start of the Allocation.</li>
+      <li>They have the privilige to add programs.</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="flow-of-the-process">Flow of the Process</h1>
+
+<ul>
+  <li>Super Admin has to add the respective programs and streams.</li>
+  <li>All the faculty members have to register to the portal choosing their respective stream. If your stream is not present in the registraion page please contact the Super Admin to add it.</li>
+  <li>Super Admin has to then choose a Co-ordinator to each program. Do note that one faculty member can behave as a Co-ordinator only for one program.</li>
+  <li>Each Co-ordinator has to then import the student list in a csv file containing Name,Rollno.,CGPA of each student. Do note that only the students in this list will be able to register to the portal. Students not in this list wont be able to register to the portal.</li>
+  <li>The Co-ordinators of each program have to start the allocation by setting the first deadline and fillng in the presets. On setting the first deadine the stages start i.e it will go to stage 1.</li>
+  <li>Start of Stage 1
+    <ul>
+      <li>Now the faculty have to add their projects to the programs they chose to support.</li>
+    </ul>
+  </li>
+  <li>End of Stage 1</li>
+  <li>Co-ordinators have to proceed to the next stage by hitting the proceed button. Co-ordinators have to make sure that no faculty have violated the presets, otherwise you wont be able to move to the next stage. Note that there are some violations which have to be resolved in the Manage-&gt;Faculty tab otherwise you wont be able to proceed to the next stage.</li>
+  <li>Start of Stage 2
+    <ul>
+      <li>Students have to fill in their preferences.</li>
+    </ul>
+  </li>
+  <li>End of Stage 2</li>
+  <li>Co-ordinator has to proceed to the next stage and set the deadline for this stage.</li>
+  <li>Start of Stage 3
+    <ul>
+      <li>Faculty have to fill in their preferences of students for each project they floated. In this stage faculty can choose which projects they finally want to float of the all the projects they floated.</li>
+    </ul>
+  </li>
+  <li>End of Stage 3</li>
+  <li>Stage 4 is Allocation</li>
+  <li>Co-ordinator can try out various allocations in the Project tab and then can publish to Faculty or Students. Do note that on publishing the allocation details to Faculty or Students mails will be sent to the respective groups automatically.</li>
+</ul>
+
+<h1 id="stages">Stages</h1>
+
+<p>The project allocation consists of four stages namely Creating Projects, Student Preference, Faculty Preference and Project Allocation. This is a quick overview as to understand the process.</p>
+<ul>
+  <li>
+    <p><strong>Stage 1 : Creating Projects</strong></p>
+
+    <ol>
+      <li>The faculty can ADD/EDIT/DELETE projects. Note that these options will be disabled in the further stages.</li>
+      <li>Sometimes you wont be able to add any projects because you may be violating certain presets set by the Co-ordinator of that program. In such case you need to communicate with the Co-ordinator and take necessary steps.</li>
+      <li>The Save Preferences button in the Students Tab in each project will be disabled. Please refrain from clicking it.</li>
+      <li>Students preferences will be locked i.e students wont be able to edit their preferences.</li>
+      <li>Sometimes you will be logged out of the application. Dont worry this is because of session expiry or because of any server error. In the later case please contact us.</li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>Stage 2 : Student Preferences</strong></p>
+
+    <ol>
+      <li>Faculty’s ADD/EDIT/DELETE options are disabled from this stage and through out.</li>
+      <li>Students can now give their preferences. Please do note that if you dont give any preference, you will be alloted a random project.</li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>Stage 3 : Faculty Preferences</strong></p>
+
+    <ol>
+      <li>Faculty have to give their preference in the Student tab in each project section. You can Save Preferences how many ever times you want. Note that the latest save will be considered for the allocation.</li>
+      <li>Faculty also have to select a final list of projects from all the projects they floated which they finally want to offer.</li>
+      <li>Students wont be able to edit their preferences further.</li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>Stage 4 : Project Allocation</strong></p>
+
+    <ol>
+      <li>Project Allocation allocates program wise, and after the allocation make sure to click on the Publish to Faculty and the Publish to Students button to send mails to all the members involved in that particular program indicating the end of the allocation and to publish the details of the allocation to the respective group.</li>
+      <li>Now you can exclude projects from the allocation by deselecting them in the Project tab. Go through the video to understand this better.</li>
+      <li>Students will be able to see their project alloted in their home page. It will appear as an expansion panel in place of the timeline.</li>
+    </ol>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2023-09-25T20:52:38+05:30">September 25, 2023</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/projects/Pesticide/" class="pagination--pager" title="Autonomous Pesticide Spraying Robot
+">Previous</a>
+    
+    
+      <a href="/projects/SparseReward/" class="pagination--pager" title="Sparse Reward Propagation for Deep Reinforcement Learning
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/vumsee_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://facebook.com/alisetti.vamsi" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+          <li><a href="https://github.com/Vamsi995" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/_v.um.see_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://stackoverflow.com/users/12236439/sai-vamsi" rel="nofollow noopener noreferrer"><i class="fab fa-stack-overflow" aria-hidden="true"></i> StackOverflow</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/sai-vamsi-alisetti/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="mailto:saivamsi.ds123@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2023 Alisetti Sai Vamsi. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
