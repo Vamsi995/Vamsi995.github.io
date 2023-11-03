@@ -78,7 +78,7 @@ var store = [{
         "teaser": "/assets/images/projects/Tictactoe/Teaser.jpg"
       },{
         "title": "Capstone Project: MARL for Cooperative and Independent Behaviors on Highways and Ring Roads",
-        "excerpt":"You can find full details about the project in this report Capstone Project Report.  ","categories": [],
+        "excerpt":"This project is an extension to the work done by Prof. Cathy Wu in the paper Dissipating stop-and-go waves in closed and open networks via deep reinforcement learning and the work of Fang-Chieh Chou in the paper The Lord of the Ring Road: A Review and Evaluation of Autonomous Control...","categories": [],
         "tags": [],
         "url": "/research/%20Multi%20Agent%20Reinforcement%20Learning%20for%20Cooperative%20and%20Independent%20behaviors%20on%20Highways%20and%20Ring%20Roads/",
         "teaser": "/assets/images/projects/MultiAgent/Teaser2.png"

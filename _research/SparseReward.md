@@ -1,7 +1,7 @@
 ---
 title: "Sparse Reward Propagation for Deep Reinforcement Learning"
 layout: single
-excerpt: "Meet.me is a smart online collaboration tool that supports seamless screen sharing and whiteboard features integrated with chat messaging system."
+excerpt: "Extracted a potential-based reward shaping function automatically from the MDP using a GCN and augumented it on the sprase reward system to propagate rewards and accelerate RL algorithms. PVF have been used as features into the GCN as they form the basis of value function space."
 toc: true
 toc_sticky: true
 header:
