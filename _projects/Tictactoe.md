@@ -1,7 +1,7 @@
 ---
 title: "Tic Tac Toe on FPGA"
 layout: single
-excerpt: "Meet.me is a smart online collaboration tool that supports seamless screen sharing and whiteboard features integrated with chat messaging system."
+excerpt: "Implemented a tic-tac-toe game on FPGA using Verilog HDL as a part of the course project for Digital Systems Laboratory."
 toc: true
 toc_sticky: true
 header:

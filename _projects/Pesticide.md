@@ -1,7 +1,7 @@
 ---
 title: "Autonomous Pesticide Spraying Robot"
 layout: single
-excerpt: "This robot is built to reduce manual pesticide spraying drudgery in farmlands"
+excerpt: "We built a robot that mitigaes farmer's drudgery of manual pesticide spraying by autonomously navigating the entire field, and spraying pesticide optimially to each plant, and also reducing the pesticide dispersion because of wind with its enclosed design."
 toc: true
 toc_sticky: true
 header:

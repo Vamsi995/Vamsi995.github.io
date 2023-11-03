@@ -1,7 +1,7 @@
 ---
 title: "Capstone Project: MARL for Cooperative and Independent Behaviors on Highways and Ring Roads"
 layout: single
-excerpt: "Meet.me is a smart online collaboration tool that supports seamless screen sharing and whiteboard features integrated with chat messaging system."
+excerpt: "Analyzed and studied novel coordinated MARL algorithms to avoid collisons on highways and dissipating traffic congestion waves in ring road systems. Developed cooperative and independent driving policies to multi agent systems in different traffic scenarios."
 toc: true
 toc_sticky: true
 header:
@@ -9,6 +9,8 @@ header:
 sidebar:
   - title: "GitHub"
     text: <a href="https://github.com/Vamsi995/RingRoad-RL">https://github.com/Vamsi995/RingRoad-RL</a>
+  - title: "SUMO Implementation"
+    text: <a href="https://github.com/Vamsi995/rl-sumo">https://github.com/Vamsi995/rl-sumo</a>
   - title: "Responsibilities"
     text: "Worked on exploring the applicaiton of value-based and policy-based algorithms in mixed autonomy traffic."
   - title: "Technology Frameworks & Languages"
