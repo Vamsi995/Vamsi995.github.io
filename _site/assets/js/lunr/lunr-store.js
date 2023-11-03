@@ -11,20 +11,26 @@ var store = [{
         "url": "/achievements/iptif/",
         "teaser": "/assets/images/unsplash-gallery-image-1-th.jpg"
       },{
+        "title": "Natural Language Processing Certification - Top 1%",
+        "excerpt":"Here is the link to my blog for WoC: Blog Link  ","categories": [],
+        "tags": [],
+        "url": "/achievements/nlp/",
+        "teaser": "/assets/images/unsplash-gallery-image-1-th.jpg"
+      },{
         "title": "Winter of Code",
         "excerpt":"Here is the link to my blog for WoC: Blog Link  ","categories": [],
         "tags": [],
         "url": "/achievements/woc/",
         "teaser": "/assets/images/unsplash-gallery-image-1-th.jpg"
       },{
-        "title": "Something",
+        "title": "Winter of Code",
         "excerpt":"Testing  ","categories": ["Algorithm"],
         "tags": ["AI"],
         "url": "/algorithm/test-copy/",
         "teaser": "/assets/images/images.jpeg"
       },{
-        "title": "Something",
-        "excerpt":"Testing  ","categories": ["Algorithm"],
+        "title": "Scheduler as a Platform",
+        "excerpt":"An essential component of every business is to schedule certain tasks for automation. For this purpose google cloud platform provides cloud schedulers that have the capability to schedule jobs. But have you ever faced an issue where there are a plethora of cloud schedulers and it becomes difficult to manage...","categories": ["Algorithm"],
         "tags": ["AI"],
         "url": "/algorithm/test/",
         "teaser": "/assets/images/images.jpeg"
@@ -71,17 +77,35 @@ var store = [{
         "url": "/projects/Tictactoe/",
         "teaser": "/assets/images/projects/Tictactoe/Teaser.jpg"
       },{
-    "title": "Something",
+        "title": "Capstone Project: MARL for Cooperative and Independent Behaviors on Highways and Ring Roads",
+        "excerpt":"You can find full details about the project in this report Capstone Project Report.  ","categories": [],
+        "tags": [],
+        "url": "/research/%20Multi%20Agent%20Reinforcement%20Learning%20for%20Cooperative%20and%20Independent%20behaviors%20on%20Highways%20and%20Ring%20Roads/",
+        "teaser": "/assets/images/projects/MultiAgent/Teaser2.png"
+      },{
+        "title": "Paraphrase Generator with T5 transformer",
+        "excerpt":"A Paraphrase-Generator built using transformers which takes an English sentence as an input and produces a set of paraphrased sentences. This is an NLP task of conditional text-generation. The model used here is the T5ForConditionalGeneration from the huggingface transformers library. This model is trained on the Google’s PAWS Dataset and...","categories": [],
+        "tags": [],
+        "url": "/research/ParaphraseGen/",
+        "teaser": "/assets/images/projects/Paraphrase/nlp.png"
+      },{
+        "title": "Sparse Reward Propagation for Deep Reinforcement Learning",
+        "excerpt":"This work is based on the paper Reward Propagation using Graph Convolutional Networks using the Proto Value Functions by Mahadevan and Maggioni as features to the GCN. The underlying MDP of the Gridworld is captured as a graph which is then used to calculate the Proto Value Functions. The implementation...","categories": [],
+        "tags": [],
+        "url": "/research/SparseReward/",
+        "teaser": "/assets/images/projects/Reward/Teaser.png"
+      },{
+    "title": "Winter of Code",
     "excerpt":"Testing  ","url": "http://localhost:4000/_posts/2023-07-21-test-copy/"
   },{
-    "title": "Something",
-    "excerpt":"Testing  ","url": "http://localhost:4000/_posts/2023-09-21-test/"
+    "title": "Scheduler as a Platform",
+    "excerpt":"An essential component of every business is to schedule certain tasks for automation. For this purpose google cloud platform provides cloud schedulers that have the capability to schedule jobs. But have you ever faced an issue where there are a plethora of cloud schedulers and it becomes difficult to manage...","url": "http://localhost:4000/_posts/2023-09-21-test/"
   },{
     "title": "About Me",
-    "excerpt":"I am a fresh graduate from IIT Palakkad majoring in Computer Science &amp; Engineering with a potent blend of industry and research experiences. I am interested in problem-solving be it in a social aspect or analytical aspect, and nothing brings me more joy than solving something that is on the...","url": "http://localhost:4000/about/"
+    "excerpt":"I am a fresh graduate from IIT Palakkad majoring in Computer Science &amp; Engineering with a potent blend of industry and research experiences. I am interested in problem-solving be it in a social aspect or analytical aspect, and nothing brings me more joy than solving something that is on the...","url": "http://localhost:4000/CV/"
   },{
     "title": "Achievements",
-    "excerpt":"                                                 Winter of Code                          Top contributor at winter of code open source program.                                                IPTIF                          UG Fellowship awarded for my capstone project                                                Inter IIT Tech Meet 2018                          Won the first place in Tata Center of Technology and Developement Challenge in Inter IIT Tech Meet 2018 at IIT Bombay            ","url": "http://localhost:4000/achievements/"
+    "excerpt":"Winter of Code Top contributor at winter of code open source program. Natural Language Processing Certification - Top 1% Top contributor at winter of code open source program. IPTIF UG Fellowship awarded for my capstone project Inter IIT Tech Meet 2018 Won the first place in Tata Center of Technology...","url": "http://localhost:4000/achievements/"
   },{
     "title": null,
     "excerpt":" ","url": "http://localhost:4000/_pages/carousels/"
@@ -90,7 +114,7 @@ var store = [{
     "excerpt":"Indian Institute of Technology (IIT) Palakkad                                       (2018-2022) Course Work (CSE) Introduction to Programming Logic for Computing Data Structures and Algorithms Discrete Mathematics for Computer Science Design and Analysis of Algorithms Theory...","url": "http://localhost:4000/education/"
   },{
     "title": null,
-    "excerpt":"Hey Everyone!        This is my personal portfolio, well more like a life blog lol. I hope you have fun browsing through some stuff I've done!! Also I am someone who is interested in technology, science, and computers in general. And most of all AI!!       ","url": "http://localhost:4000/"
+    "excerpt":"Hey Everyone! This is my personal portfolio, well more like a life blog lol. I hope you have fun browsing through some stuff I've done!! Also I am someone who is interested in technology, science, and computers in general. And most of all AI!! I am a fresh graduate from...","url": "http://localhost:4000/"
   },{
     "title": null,
     "excerpt":"var idx = lunr(function () { this.field('title') this.field('excerpt') this.field('categories') this.field('tags') this.ref('id') this.pipeline.remove(lunr.trimmer) for (var item in store) { this.add({ title: store[item].title, excerpt: store[item].excerpt, categories: store[item].categories, tags: store[item].tags, id: item }) } }); $(document).ready(function() { $('input#search').on('keyup', function () { var resultdiv = $('#results'); var query = $(this).val().toLowerCase(); var result = idx.query(function...","url": "http://localhost:4000/assets/js/lunr/lunr-en.js"
@@ -108,7 +132,7 @@ var store = [{
     "excerpt":"## Notable Works:    {% assign collection = 'projects' %}   {% assign posts = site[collection] | reverse %}   {% for post in posts %}     {% include archive-single.html type=\"grid\" %}   {% endfor %}     ","url": "http://localhost:4000/projects/"
   },{
     "title": "Research",
-    "excerpt":"My research interestes include reinforcement learning, natural language processing, customizable AI. ## Research Experience - **Summer Research Intern - CiSTUP Lab - IISc Bangalore** - Working on developing coordinated MARL (Mutli Agent Reinforcement Learning) algorithms for collision avoidance in open traffic systems and to mitigate phantom jams in closed traffic...","url": "http://localhost:4000/research/"
+    "excerpt":"## Research     {% assign collection = 'research' %}   {% assign posts = site[collection] | reverse %}   {% for post in posts %}     {% include archive-single.html type=\"list\" %}   {% endfor %}     ","url": "http://localhost:4000/research/"
   },{
     "title": null,
     "excerpt":"{% if page.xsl %} {% endif %} {% assign collections = site.collections | where_exp:'collection','collection.output != false' %}{% for collection in collections %}{% assign docs = collection.docs | where_exp:'doc','doc.sitemap != false' %}{% for doc in docs %} {{ doc.url | replace:'/index.html','/' | absolute_url | xml_escape }} {% if doc.last_modified_at or doc.date...","url": "http://localhost:4000/sitemap.xml"

@@ -1,7 +1,7 @@
 ---
 layout: single
 title: About Me
-permalink: /about/
+permalink: /CV/
 ---
 
 ![my_img](/assets/images/about/aboutme.jpg)

@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Something | Alisetti Sai Vamsi</title>
-<meta name="description" content="Might Run">
+<!-- begin _includes/seo.html --><title>Scheduler as a Platform | Alisetti Sai Vamsi</title>
+<meta name="description" content="Platform - Airasia">
 
 
   <meta name="author" content="Alisetti Sai Vamsi">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Alisetti Sai Vamsi">
-<meta property="og:title" content="Something">
+<meta property="og:title" content="Scheduler as a Platform">
 <meta property="og:url" content="http://localhost:4000/algorithm/test/">
 
 
-  <meta property="og:description" content="Might Run">
+  <meta property="og:description" content="Platform - Airasia">
 
 
 
@@ -129,7 +129,7 @@
             </li><li class="masthead__menu-item">
               <a href="/achievements/">Achievements</a>
             </li><li class="masthead__menu-item">
-              <a href="/about/">About Me</a>
+              <a href="/CV/">CV</a>
             </li><li class="masthead__menu-item">
               <a href="/misc/">Misc</a>
             </li></ul>
@@ -167,12 +167,12 @@
     <div class="wrapper">
       <h1 id="page-title" class="page__title" itemprop="headline">
         
-          Something
+          Scheduler as a Platform
 
         
       </h1>
       
-        <p class="page__lead">Might Run
+        <p class="page__lead">Platform - Airasia
 </p>
       
       
@@ -196,7 +196,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          5 minute read
         
       </span>
     
@@ -247,7 +247,7 @@
     
       
       
-        <li class="current">Something</li>
+        <li class="current">Scheduler as a Platform</li>
       
     
   </ol>
@@ -280,8 +280,8 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Something">
-    <meta itemprop="description" content="Might Run">
+    <meta itemprop="headline" content="Scheduler as a Platform">
+    <meta itemprop="description" content="Platform - Airasia">
     <meta itemprop="datePublished" content="2023-09-21T00:00:00+05:30">
     <meta itemprop="dateModified" content="2019-07-10T18:36:00+05:30">
 
@@ -298,7 +298,56 @@
             </nav>
           </aside>
         
-        <p>Testing</p>
+        <p>An essential component of every business is to schedule certain tasks for automation. For this purpose google cloud platform provides cloud schedulers that have the capability to schedule jobs. But have you ever faced an issue where there are a plethora of cloud schedulers and it becomes difficult to manage them only through gui interface that google provides? If you’ve been there, then this blog post covers how we at airasia built a stand alone stateless platform to manage bulk updates to schedulers and provide a versatile platform that can be reused by multiple lob’s. Before we dive into the problem, lets first understand the platform provided by google.
+Understanding GCP cloud schedulers</p>
+
+<p>Google Cloud Schedulers offer a GUI interface to perform CRUD operations wrt to schedulers and also provide us with additional features such as force run, pausing/resuming jobs, etc. These cloud schedulers also offer multiple targets, i.e we can setup schedulers to target a http url, pub sub topic, or app engine job. They also provide us with insights about the last scheduler run, status of the current scheduler run, and next scheduler run. It also has an additional capability to force run certain jobs on demand.</p>
+
+<p>Coming to the pricing of these schedulers, according to google, the pricing is based on the job but not on the number of times it executes i.e irrespective of the number of times the job is called or the type of job or the status of the job (even paused job), the job is billed by $0.1/job/31 days.The bill on the job is calculated per day, i.e for instance a single job is defined and deleted 10 days later then that job is billed as $0.1/31 times 10 which is 0.03$.
+Need for the platform
+Some of the critical issues that we found while we are trying to scale our schedulers are:
+Time consuming to update a specific job using gui manuallyReduced productivity of the team
+Managing schedulers on a scale is quite cumbersomeOften led to human prone errors 
+Multiple Schedulers for different purposes, all in one place.Difficult to group different tasks based on usage
+Advanced Configuration OptionsComplex configuration options like min-backoff, max-backoff, max-doublings that not everyone understands.
+Difficult to read cron expressionsNeed a solution to convert cron expressions to human readable format.
+Lack of state managementOnce accidentally deleted, very difficult to bring it back up, since there is no tracking of the previous state.
+Paused jobs are also billed according to the pricing overview.
+Because of these issues, we needed an efficient/scalable solution to manage cloud schedulers and also provide a way for the team to manage schedulers by abstracting away the knowledge required to use google cloud schedulers. Enter Scheduler as a platform
+What is Scheduler as a platform?
+Scheduler as a Platform is an intelligent, scalable and cost-effective scheduler management solution that offers effortless on-the-fly control with config-driven, template based scheduling.</p>
+
+<p>Features it offers</p>
+
+<p>One Click Pipeline - We have integrated the google sheets with gitlab pipeline using google appscript. Now with a single click, we can run this pipeline to manage schedulers on a scale.
+Config Driven Management - We use template based google sheets to maintain scheduler configuration state.
+Stateless Design - Lightweight gitlab pipeline that does not store any scheduler state information.
+Platform Agnostic - Does not rely on any platform or lob related services/variables.
+User Friendly - Knowledge of understanding google cloud schedulers is not required to setup schedulers. Anyone with access to the gsheet can setup schedulers on the fly, with a single click.
+Easily Reproducible - Instantaneous setup/teardown of cloud schedulers on a scale.
+Design</p>
+
+<p>We initially thought about a stateful design that includes a database and a microservice to drive the functions, but because of the cost overhead that it incurs we went for a simpler approach using a stateless design by leveraging gitlab ci pipelines as the platform and google sheets to maintain the scheduler configuration.This activity of choosing a stateless design reduced almost 100% of the cost that would’ve been burned on a database/microservice maintenance.
+Data processing</p>
+
+<p>The platform performs the following stages in order to transform the data from the google sheets to appropriate scheduler state information. 
+Template Manager: The template manager is used to decode the state information from the google sheet templates that we use to abstract scheduler configuration.
+Validation: The validation module performs sanity checks to make sure that the gsheet data that the platform reads is coherent and consistent.
+Processing Module: This is the heart of the platform where it fetches the current state from the google cloud scheduler platform and cross checks it with the gsheet configuration provided.
+Aggregate: The aggregation module pulls out the scheduler id’s that require a change, and performs the necessary cloud scheduler action.
+Templates
+We followed a template based approach, wherein a separate gsheet holds the configuration for the schedulers to be created so that we can abstract away all the complex configuration so that the sheet looks more intuitive. For example, consider the below template sheet and the scheduler sheet.</p>
+
+<p>After the template management process in the platform the data is transformed into the following:</p>
+
+<p>The template holds formatting rules, that needs to be applied ot the scheduler sheet data. Here we defined our formatting string to be as follows:
+Generic Format String: -a | -b | -c 
+Any “-” (hyphen) before a word implies that it is a column name, and a “|” (pipe) implies a concatenation operation. Hence the above format string implies a concatenation operation between the column a, column b, column c.
+In the same way if we look at our template gsheet, we can see that the schedulerName field has a format string of -flightType | -mode. This tells the platform that the sheet data needs to be transformed and the schedulerName should be a concatenation of flightType column and mode column from the scheduler sheet data. Similarly this format string can be placed anywhere in the template sheet except for the template name and environment which are absolute values. We can also place these format strings in the data column which is a json payload. It can be placed at any nested level, since a DFS search is made to evaluate any such format string.
+This way we give freedom to the person creating the schedulers to maintain the sheet however they wish, creating as many columns as required and creating the appropriate format strings in the template.
+Platform Usage
+We used app script to integrate google sheets with gitlab pipeline so that a single click can automate the entire process of scheduler management.</p>
+
 
         
       </section>
@@ -349,7 +398,7 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Something%20http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Ftest%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Scheduler+as+a+Platform%20http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Ftest%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Falgorithm%2Ftest%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
@@ -360,7 +409,7 @@
       
   <nav class="pagination">
     
-      <a href="/algorithm/test-copy/" class="pagination--pager" title="Something
+      <a href="/algorithm/test-copy/" class="pagination--pager" title="Winter of Code
 ">Previous</a>
     
     
@@ -392,7 +441,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/algorithm/test-copy/" rel="permalink">Something
+        <a href="/algorithm/test-copy/" rel="permalink">Winter of Code
 </a>
       
     </h2>
@@ -424,7 +473,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Might Run
+    <p class="archive__item-excerpt" itemprop="description">My journey through winter of code program
 </p>
   </article>
 </div>

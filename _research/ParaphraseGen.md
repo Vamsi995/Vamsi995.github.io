@@ -176,7 +176,7 @@ curl -XPOST localhost:5000/run_forward \
     howpublished = {\url{https://github.com/Vamsi995/Paraphrase-Generator}},
 }
 ```
-List of publications using Paraphrase-Generator:
+List of publications using Paraphrase-Generator (please open a pull request to add missing entries):
 
 
 [DeepA2: A Modular Framework for Deep Argument Analysis
