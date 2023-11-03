@@ -24,14 +24,14 @@ var store = [{
         "teaser": "/assets/images/unsplash-gallery-image-1-th.jpg"
       },{
         "title": "Winter of Code",
-        "excerpt":"Testing  ","categories": ["Algorithm"],
-        "tags": ["AI"],
+        "excerpt":"I participated in the winter of code open source program organized by Google Student Developer Club at DSC IEM. I contributed to the project of “Text Sentiment Analysis” under the sub-organization of IEM.   Here is the link to my blog for WoC: WoCabulary  ","categories": ["Algorithm"],
+        "tags": ["Open Source"],
         "url": "/algorithm/test-copy/",
         "teaser": "/assets/images/images.jpeg"
       },{
         "title": "Scheduler as a Platform",
-        "excerpt":"An essential component of every business is to schedule certain tasks for automation. For this purpose google cloud platform provides cloud schedulers that have the capability to schedule jobs. But have you ever faced an issue where there are a plethora of cloud schedulers and it becomes difficult to manage...","categories": ["Algorithm"],
-        "tags": ["AI"],
+        "excerpt":"Here is the link to my blog: Scheduler as a Platform  ","categories": ["Algorithm"],
+        "tags": ["Airasia"],
         "url": "/algorithm/test/",
         "teaser": "/assets/images/images.jpeg"
       },{
@@ -96,10 +96,10 @@ var store = [{
         "teaser": "/assets/images/projects/Reward/Teaser.png"
       },{
     "title": "Winter of Code",
-    "excerpt":"Testing  ","url": "http://localhost:4000/_posts/2023-07-21-test-copy/"
+    "excerpt":"I participated in the winter of code open source program organized by Google Student Developer Club at DSC IEM. I contributed to the project of “Text Sentiment Analysis” under the sub-organization of IEM.   Here is the link to my blog for WoC: WoCabulary  ","url": "http://localhost:4000/_posts/2023-07-21-test-copy/"
   },{
     "title": "Scheduler as a Platform",
-    "excerpt":"An essential component of every business is to schedule certain tasks for automation. For this purpose google cloud platform provides cloud schedulers that have the capability to schedule jobs. But have you ever faced an issue where there are a plethora of cloud schedulers and it becomes difficult to manage...","url": "http://localhost:4000/_posts/2023-09-21-test/"
+    "excerpt":"Here is the link to my blog: Scheduler as a Platform  ","url": "http://localhost:4000/_posts/2023-09-21-test/"
   },{
     "title": "About Me",
     "excerpt":"I am a fresh graduate from IIT Palakkad majoring in Computer Science &amp; Engineering with a potent blend of industry and research experiences. I am interested in problem-solving be it in a social aspect or analytical aspect, and nothing brings me more joy than solving something that is on the...","url": "http://localhost:4000/CV/"
