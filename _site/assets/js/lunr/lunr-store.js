@@ -12,7 +12,7 @@ var store = [{
         "teaser": "/assets/images/images.jpeg"
       },{
         "title": "Natural Language Processing Certification - Top 1%",
-        "excerpt":"Here is the link for more details: Drive Link   NPTEL Website Link: Course Link  ","categories": [],
+        "excerpt":"Achieved top 1% in the national level certificaiton course by IIT Kanpur under NPTEL organization. Scored 93% out of 5222 enrolled candidates.   Here is the link for more details: Drive Link   NPTEL Website Link: Course Link  ","categories": [],
         "tags": [],
         "url": "/achievements/nlp/",
         "teaser": "/assets/images/images.jpeg"

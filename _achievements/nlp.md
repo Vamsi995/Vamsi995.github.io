@@ -17,6 +17,8 @@ gallery:
     alt: "placeholder image 3"
 ---
 
+Achieved top 1% in the national level certificaiton course by IIT Kanpur under NPTEL organization. Scored 93% out of 5222 enrolled candidates.
+
 Here is the link for more details: [Drive Link](https://drive.google.com/drive/folders/1D80YkzemRfvwEKLYGdOFM1bvCDPPEMjM?usp=drive_link)
 
 NPTEL Website Link: [Course Link](https://nptel.ac.in/courses/106105158)
