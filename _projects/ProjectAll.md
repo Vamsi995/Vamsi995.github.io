@@ -7,7 +7,7 @@ toc_sticky: true
 header:
   teaser: /assets/images/projects/ProjectAllocation/Teaser.png
 sidebar:
-  - title: "Link"
+  - title: "GitHub"
     text: <a href="https://github.com/Vamsi995/Project-Allocation">https://github.com/Vamsi995/Project-Allocation</a>
   - title: "Role"
     text: "Team Lead"

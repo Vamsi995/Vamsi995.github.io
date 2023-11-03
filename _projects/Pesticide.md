@@ -1,13 +1,14 @@
 ---
 title: "Autonomous Pesticide Spraying Robot"
 layout: single
-excerpt: "Meet.me is a smart online collaboration tool that supports seamless screen sharing and whiteboard features integrated with chat messaging system."
+excerpt: "This robot is built to reduce manual pesticide spraying drudgery in farmlands"
 toc: true
 toc_sticky: true
 header:
+  image: /assets/images/projects/Pesticide/Teaser.jpg
   teaser: /assets/images/projects/Pesticide/Teaser.jpg
 sidebar:
-  - title: "Link"
+  - title: "Drive Link"
     text: <a href="https://drive.google.com/drive/folders/1FUVbfsdg-1-q_SZsKyd26T_qvc01hWPf?usp=sharing">https://drive.google.com/drive/folders/1FUVbfsdg-1-q_SZsKyd26T_qvc01hWPf?usp=sharing</a>
   - title: "Role"
     text: "Team Member"
@@ -27,4 +28,10 @@ gallery:
     alt: "placeholder image 3"
 ---
 
-You can find full details about the project in this [drive link](https://drive.google.com/drive/folders/1FUVbfsdg-1-q_SZsKyd26T_qvc01hWPf?usp=sharing).
+Design Reports: [Drive Link](https://drive.google.com/drive/folders/1bI_3nNsBAaECOYIsT_fJqE1N9Q4n5NRy?usp=sharing)
+
+Navigation Module Reports: [Drive Link](https://drive.google.com/drive/folders/1MYq1JV9k6Hrhv9rYyDWcBLtv4xVMT0Ba?usp=drive_link)
+
+Final Report: [Drive Link](https://drive.google.com/file/d/14Jg1_Rns4n5eJX53IemzfxRNtSeNua-o/view?usp=drive_link)
+
+You can find full details about the project in this [Drive link](https://drive.google.com/drive/folders/1FUVbfsdg-1-q_SZsKyd26T_qvc01hWPf?usp=sharing).

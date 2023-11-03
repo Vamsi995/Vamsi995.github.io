@@ -7,7 +7,7 @@ toc_sticky: true
 header:
   teaser: /assets/images/projects/Tictactoe/Teaser.jpg
 sidebar:
-  - title: "Link"
+  - title: "Drive Link"
     text: <a href="https://drive.google.com/drive/folders/1UOmY8kUEWy_Of2fpiQGqjFD85GuF4TUJ?usp=sharing">https://drive.google.com/drive/folders/1UOmY8kUEWy_Of2fpiQGqjFD85GuF4TUJ?usp=sharing</a>
   - title: "Role"
     text: "Team Lead"

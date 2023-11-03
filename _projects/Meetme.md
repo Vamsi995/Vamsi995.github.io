@@ -10,7 +10,7 @@ header:
     provider: youtube
   teaser: /assets/images/projects/Meetme/Meetme-teaser.png
 sidebar:
-  - title: "Link"
+  - title: "GitHub"
     text: <a href="https://github.com/Vamsi995/meet.me">https://github.com/Vamsi995/meet.me</a>
   - title: "Role"
     text: "Networking Module Team Member"

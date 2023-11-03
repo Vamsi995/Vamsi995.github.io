@@ -1,10 +1,10 @@
 ---
 title: "Natural Language Processing Certification - Top 1%"
 layout: single
-excerpt: "Top contributor at winter of code open source program."
+excerpt: "Achieved top 1% in the national level natural language processing certification course."
 header:
-  image: /assets/images/awards/winterofcode-1.png
-  teaser: assets/images/unsplash-gallery-image-1-th.jpg
+  image: /assets/images/achievements/nlp/nptel.jpg
+ 
 gallery:
   - url: /assets/images/unsplash-gallery-image-1.jpg
     image_path: assets/images/unsplash-gallery-image-1-th.jpg
@@ -17,4 +17,6 @@ gallery:
     alt: "placeholder image 3"
 ---
 
-Here is the link to my blog for WoC: [Blog Link](https://khanfarhan10.github.io/woc/WoCabulary/)
+Here is the link for more details: [Drive Link](https://drive.google.com/drive/folders/1D80YkzemRfvwEKLYGdOFM1bvCDPPEMjM?usp=drive_link)
+
+NPTEL Website Link: [Course Link](https://nptel.ac.in/courses/106105158)

@@ -1,24 +1,24 @@
 var store = [{
-        "title": "Inter IIT Tech Meet 2018",
+        "title": "Gold Medal in Inter IIT Tech Meet 2018",
         "excerpt":"An autonomous, robust, and affordable robot for farmers who require efficient and safe pesticide spraying. The robot uses simple electronics to autonomously navigate fields while spraying pesticides by detecting plants. The chassis has a unique closed design enabling our robot to spray pesticide efficiently such that it reaches all the...","categories": [],
         "tags": [],
         "url": "/achievements/interiit/",
-        "teaser": "/assets/images/unsplash-gallery-image-1-th.jpg"
+        "teaser": "/assets/images/images.jpeg"
       },{
-        "title": "IPTIF",
-        "excerpt":"Fellowship awarded for my research project of Multi-Agent Reinforcement learning for Independent and Co-operative behaviours on Highways and Ring Roads.   Fellowship Website: Link   ","categories": [],
+        "title": "IIT Palakkad Technology IHub Foundation Agni UG Fellowship",
+        "excerpt":"Fellowship awarded for my research project of Multi-Agent Reinforcement learning for Independent and Co-operative behaviours on Highways and Ring Roads.   Fellowship Website: Link   Grant Letter: Signed Grant Letter   Video Presentations: Presentation Links   Here are the full details: Drive Link   ","categories": [],
         "tags": [],
         "url": "/achievements/iptif/",
-        "teaser": "/assets/images/unsplash-gallery-image-1-th.jpg"
+        "teaser": "/assets/images/images.jpeg"
       },{
         "title": "Natural Language Processing Certification - Top 1%",
-        "excerpt":"Here is the link to my blog for WoC: Blog Link  ","categories": [],
+        "excerpt":"Here is the link for more details: Drive Link   NPTEL Website Link: Course Link  ","categories": [],
         "tags": [],
         "url": "/achievements/nlp/",
-        "teaser": "/assets/images/unsplash-gallery-image-1-th.jpg"
+        "teaser": "/assets/images/images.jpeg"
       },{
         "title": "Winter of Code",
-        "excerpt":"Here is the link to my blog for WoC: Blog Link  ","categories": [],
+        "excerpt":"I participated in the winter of code open source program organized by Google Student Developer Club at DSC IEM. I contributed to the project of “Text Sentiment Analysis” under the sub-organization of IEM. Here is the link to my blog for WoC: WoCabulary Here is the GitHub project: Text Sentiment...","categories": [],
         "tags": [],
         "url": "/achievements/woc/",
         "teaser": "/assets/images/unsplash-gallery-image-1-th.jpg"
@@ -36,7 +36,7 @@ var store = [{
         "teaser": "/assets/images/images.jpeg"
       },{
         "title": "Capstone Project: MARL for Cooperative and Independent Behaviors on Highways and Ring Roads",
-        "excerpt":"You can find full details about the project in this report Capstone Project Report.  ","categories": [],
+        "excerpt":"This project is an extension to the work done by Prof. Cathy Wu in the paper Dissipating stop-and-go waves in closed and open networks via deep reinforcement learning and the work of Fang-Chieh Chou in the paper The Lord of the Ring Road: A Review and Evaluation of Autonomous Control...","categories": [],
         "tags": [],
         "url": "/projects/%20Multi%20Agent%20Reinforcement%20Learning%20for%20Cooperative%20and%20Independent%20behaviors%20on%20Highways%20and%20Ring%20Roads/",
         "teaser": "/assets/images/projects/MultiAgent/Teaser2.png"
@@ -54,7 +54,7 @@ var store = [{
         "teaser": "/assets/images/projects/Paraphrase/nlp.png"
       },{
         "title": "Autonomous Pesticide Spraying Robot",
-        "excerpt":"You can find full details about the project in this drive link.  ","categories": [],
+        "excerpt":"Design Reports: Drive Link   Navigation Module Reports: Drive Link   Final Report: Drive Link   You can find full details about the project in this Drive link.  ","categories": [],
         "tags": [],
         "url": "/projects/Pesticide/",
         "teaser": "/assets/images/projects/Pesticide/Teaser.jpg"
@@ -105,7 +105,7 @@ var store = [{
     "excerpt":"I am a fresh graduate from IIT Palakkad majoring in Computer Science &amp; Engineering with a potent blend of industry and research experiences. I am interested in problem-solving be it in a social aspect or analytical aspect, and nothing brings me more joy than solving something that is on the...","url": "http://localhost:4000/CV/"
   },{
     "title": "Achievements",
-    "excerpt":"Winter of Code Top contributor at winter of code open source program. Natural Language Processing Certification - Top 1% Top contributor at winter of code open source program. IPTIF UG Fellowship awarded for my capstone project Inter IIT Tech Meet 2018 Won the first place in Tata Center of Technology...","url": "http://localhost:4000/achievements/"
+    "excerpt":"Winter of Code Top contributor at winter of code open source program. Natural Language Processing Certification - Top 1% Achieved top 1% in the national level natural language processing certification course. IIT Palakkad Technology IHub Foundation Agni UG Fellowship UG Fellowship awarded for my capstone project Gold Medal in Inter...","url": "http://localhost:4000/achievements/"
   },{
     "title": null,
     "excerpt":" ","url": "http://localhost:4000/_pages/carousels/"

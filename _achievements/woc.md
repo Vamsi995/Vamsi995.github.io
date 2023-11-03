@@ -17,4 +17,8 @@ gallery:
     alt: "placeholder image 3"
 ---
 
-Here is the link to my blog for WoC: [Blog Link](https://khanfarhan10.github.io/woc/WoCabulary/)
+I participated in the winter of code open source program organized by Google Student Developer Club at DSC IEM. I contributed to the project of "Text Sentiment Analysis" under the sub-organization of IEM.
+
+Here is the link to my blog for WoC: [WoCabulary](https://khanfarhan10.github.io/woc/WoCabulary/)
+
+Here is the GitHub project: [Text Sentiment Analysis](https://github.com/Vamsi995/TextSentimentAnalysis)

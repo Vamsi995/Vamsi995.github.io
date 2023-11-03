@@ -7,7 +7,7 @@ toc_sticky: true
 header:
   teaser: /assets/images/projects/Reward/Teaser.png
 sidebar:
-  - title: "Link"
+  - title: "GitHub"
     text: <a href="https://github.com/Vamsi995/Reward-Propagation">https://github.com/Vamsi995/Reward-Propagation</a>
   - title: "Role"
     text: "Team Lead"

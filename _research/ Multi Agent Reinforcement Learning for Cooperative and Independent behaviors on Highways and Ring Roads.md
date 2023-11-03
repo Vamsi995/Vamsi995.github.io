@@ -10,7 +10,7 @@ sidebar:
   - title: "Link"
     text: <a href="https://github.com/Vamsi995/RingRoad-RL">https://github.com/Vamsi995/RingRoad-RL</a>
   - title: "Responsibilities"
-    text: "Worked exploring the applicaiton of value-based and policy-based algorithms in mixed autonomy traffic."
+    text: "Worked on exploring the applicaiton of value-based and policy-based algorithms in mixed autonomy traffic."
   - title: "Technology Frameworks & Languages"
     text: "Python, PyTorch, OpenAI Gym, PyGame, Stable Baselines, Ray RLlib"
 gallery:

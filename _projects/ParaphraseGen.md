@@ -7,7 +7,7 @@ toc_sticky: true
 header:
   teaser: /assets/images/projects/Paraphrase/nlp.png
 sidebar:
-  - title: "Link"
+  - title: "GitHub"
     text: <a href="https://github.com/Vamsi995/Paraphrase-Generator">https://github.com/Vamsi995/Paraphrase-Generator</a>
   - title: "Role"
     text: "Research Intern At UST Global"
