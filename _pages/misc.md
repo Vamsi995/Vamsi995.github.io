@@ -38,11 +38,23 @@ carousels:
         - image: /assets/images/misc/volunteering/1691226455656.jpg
         - image: /assets/images/misc/volunteering/1691226455669.jpg
         - image: /assets/images/misc/volunteering/1691226455680.jpg
+    - images:
+        - image: /assets/images/misc/sky/1699802312642.jpg
+        - image: /assets/images/misc/sky/1699802312782.jpg
+        - image: /assets/images/misc/sky/1699802312869.jpg
+        - image: /assets/images/misc/sky/1699802313034.jpg
+        - image: /assets/images/misc/sky/1699802718252.jpg
+        - image: /assets/images/misc/sky/1699802718389.jpg
+        - image: /assets/images/misc/sky/1699802742843.jpg
+        - image: /assets/images/misc/sky/1699802813465.jpg
+        - image: /assets/images/misc/sky/1699802813477.jpg
+        - image: /assets/images/misc/sky/1699802813490.jpg
+
 ---
 
 ## Artwork
 
-I watch a lot of anime, and inherently I wanted to portray my love for anime. It is through art I feel I can share more than what I can with mere words. A picture is indeed worth more than a thousand words (Finally I get to quote this!!). I started drawing unexpectedly, where the first time I drew was the Rengoku picture which was supposed to be a practice picture on paper for the real one to go on my dorm wall in college (As the second season was airing and its the first time we were watching the same anime we all love - Demon Slayer). But ever since then, it caught on to me. I found myself drawing more often than not, as the feeling I get once I finish the art piece was exstatic. It also served as a means to calm my chaotic thoughts and also taught me the value of patience and the ability of seeing things through to the end. 
+I watch a lot of anime, and inherently I wanted to portray my love for anime. It is through art I feel I can share more than what I can with mere words. A picture is indeed worth more than a thousand words (Finally I get to quote this!!). I started drawing unexpectedly, where the first time I drew was the Rengoku picture which was supposed to be a practice picture on paper for the real one to go on my dorm wall in college (As the second season was airing and its the first time we were watching the same anime we all love - Demon Slayer). But ever since then, it caught on to me. I found myself drawing more often than not, as the feeling I get once I finish the art piece was ecstatic. It also served as a means to calm my chaotic thoughts and also taught me the value of patience and the ability of seeing things through to the end. 
 
 
 {% include carousel.html height="100" unit="%" duration="7" number="1" %}
@@ -70,3 +82,11 @@ During my intermediate education (or high school for people not familiar), I use
 - As a part of robin hood army, I was responsible for food/milk distribution for the less fortunate people suffering from leprosy, TB, HIV/AIDS.
 {% include carousel.html height="100" unit="%" duration="7" number="2" %}
 
+
+## Sky Photography (Sky Scrapes)
+
+Amidst the tumultuous events triggered by the onset of COVID-19, marked by my family contracting the virus and my brother's diagnosis with a trigeminal schwannoma (brain tumour), I often spent my free time on the terrace finishing my assignments for the day because of the unpleasant situation at home. During breaks, I developed a habit of gazing at the sky, captivated by the mesmerizing shapes the clouds formed. This contemplative activity not only served as a distraction but also evolved into a source of tranquillity and inspiration. As I continued to find respite in these moments, I began capturing the beauty of the sky during serene evenings, eventually transforming this practice into a meaningful hobby. The calming and graceful movements of the clouds provided a sense of alleviation during a challenging period, fostering a connection with nature that I hadn't anticipated. This newfound hobby became a therapeutic retreat, offering a serene escape amidst the chaos of life's uncertainties.
+
+You can view my full collection [here](https://drive.google.com/drive/folders/1KDKasoNt2xK-Up9ywMKYokuC5BecQh8A?usp=sharing).
+
+{% include carousel.html height="80" unit="%" duration="7" number="3" %}
