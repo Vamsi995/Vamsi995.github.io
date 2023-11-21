@@ -5,6 +5,9 @@ excerpt: "Analyzed and studied novel coordinated MARL algorithms to avoid collis
 toc: true
 toc_sticky: true
 header:
+  video:
+    id: 1mCQLoQ3HN5NHq6grNYc2tHsa57gFD5wJ
+    provider: google-drive
   teaser: /assets/images/projects/MultiAgent/Teaser2.png
 sidebar:
   - title: "GitHub"
@@ -35,3 +38,5 @@ This project is an extension to the work done by Prof. Cathy Wu in the paper [Di
 
 
 You can find full details about the project in this report [Capstone Project Report](/assets/images/projects/MultiAgent/BTP.pdf).
+
+You can find the simulations along with the presentations in this [Drive Link](https://drive.google.com/drive/folders/1VdRn0aM_W-nQtb3KEZMVHL057rLO4R5E?usp=sharing).
