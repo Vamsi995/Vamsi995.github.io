@@ -1,4 +1,10 @@
 var store = [{
+        "title": "First Place in IIT Palakkad Technology IHub Foundation Green Technology Quiz",
+        "excerpt":"Won the first place in the virtual quiz organized by IIT Palakkad Technology IHub Foundation on “Perspectives on Green Technology”. This virtual quiz was organized during the COVID-19 period, and was based on the use of green technology in the industry, and how it tackles the energy crisis problem. Link...","categories": [],
+        "tags": [],
+        "url": "/achievements/greentech/",
+        "teaser": "/assets/images/images.jpeg"
+      },{
         "title": "Gold Medal in Inter IIT Tech Meet 2018",
         "excerpt":"An autonomous, robust, and affordable robot for farmers who require efficient and safe pesticide spraying. The robot uses simple electronics to autonomously navigate fields while spraying pesticides by detecting plants. The chassis has a unique closed design enabling our robot to spray pesticide efficiently such that it reaches all the...","categories": [],
         "tags": [],

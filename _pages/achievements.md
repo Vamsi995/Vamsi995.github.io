@@ -15,7 +15,7 @@ carousels:
 <div class="grid__wrapper">
   {% assign collection = 'achievements' %}
   {% assign posts = site[collection] | reverse %}
-  {% for post in posts %}
+  {% for post in posts limit: 5%}
     {% include archive-single.html type="list" %}
   {% endfor %}
 </div>
