@@ -47,6 +47,18 @@ var store = [{
         "url": "/projects/%20Multi%20Agent%20Reinforcement%20Learning%20for%20Cooperative%20and%20Independent%20behaviors%20on%20Highways%20and%20Ring%20Roads/",
         "teaser": "/assets/images/projects/MultiAgent/Teaser2.png"
       },{
+        "title": "Covariance-Driven Graph Embedding for Real-Time Traffic Prediction",
+        "excerpt":"A traffic prediction model leveraging temporal graph structures to model spatial and temporal dependencies within traffic networks. This framework utilizes covariance-driven feature analysis, eigenvalue decomposition, and attention mechanisms to capture dynamic patterns, enabling accurate and scalable traffic forecasting. Tested on real-world datasets like SZ-Taxi and Los-Loop, it outperforms traditional models...","categories": [],
+        "tags": [],
+        "url": "/projects/Covariance/",
+        "teaser": "/assets/images/projects/Covariance.png"
+      },{
+        "title": "Explainable Grounded Segment Anything",
+        "excerpt":"An image segmentation pipeline that leverages Grounding DINO and Segment Anything Model (SAM) for text-guided image segmentation. It uses Grounding DINO as the first step to generate bounding boxes around entities in the image based on a user-provided text prompt. These bounding boxes are then passed into the Segment Anything...","categories": [],
+        "tags": [],
+        "url": "/projects/ExplainableSegmentAnything/",
+        "teaser": "/assets/images/projects/Explainable/explainable.png"
+      },{
         "title": "Meet.me",
         "excerpt":"The recent pandemic has changed the ways of working collaboratively: it has moved to online services such as video conferencing. We aim to facilitate the collaboration experience with our application: meet.me. Meet.me has the features of chats, a whiteboard, screen-sharing, summary generation and telemetry. The whiteboard is a canvas with...","categories": [],
         "tags": [],
@@ -89,6 +101,12 @@ var store = [{
         "url": "/research/%20Multi%20Agent%20Reinforcement%20Learning%20for%20Cooperative%20and%20Independent%20behaviors%20on%20Highways%20and%20Ring%20Roads/",
         "teaser": "/assets/images/projects/MultiAgent/Teaser2.png"
       },{
+        "title": "AWANTA: Adaptive Software-Defined Wide Area Network framework for Telehealth Access",
+        "excerpt":"AWANTA SDN Emulator This project provides an emulator designed to simulate a small, fully connected mesh network with n nodes. The primary purpose of this emulator is to demonstrate and analyze network path changes under varying conditions. Our emulator performs a trace-driven simulation, leveraging real-world latency data obtained from RIPE...","categories": [],
+        "tags": [],
+        "url": "/research/AWANTA/",
+        "teaser": "/assets/images/projects/Reward/Teaser.png"
+      },{
         "title": "Paraphrase Generator with T5 transformer",
         "excerpt":"A Paraphrase-Generator built using transformers which takes an English sentence as an input and produces a set of paraphrased sentences. This is an NLP task of conditional text-generation. The model used here is the T5ForConditionalGeneration from the huggingface transformers library. This model is trained on the Google’s PAWS Dataset and...","categories": [],
         "tags": [],
@@ -120,7 +138,7 @@ var store = [{
     "excerpt":"Indian Institute of Technology (IIT) Palakkad                                       (2018-2022) Course Work (CSE) Introduction to Programming Logic for Computing Data Structures and Algorithms Discrete Mathematics for Computer Science Design and Analysis of Algorithms Theory...","url": "http://localhost:4000/education/"
   },{
     "title": null,
-    "excerpt":" Hey Everyone!        I am an incoming Master's Student in Computer Science at the University of California, Santa Barbara. I have done my Bachelors in Computer Science from IIT Palakkad. I am primarily interested in machine learning, specifically in reinforcement learning, with a mixed interest in vision and language models.       ","url": "http://localhost:4000/"
+    "excerpt":" Hey Everyone!        I am a Master's Student in Computer Science at the University of California, Santa Barbara. I have done my Bachelors in Computer Science from IIT Palakkad. I am primarily interested in machine learning, specifically in reinforcement learning, with a mixed interest in vision and language models.       ","url": "http://localhost:4000/"
   },{
     "title": null,
     "excerpt":"var idx = lunr(function () { this.field('title') this.field('excerpt') this.field('categories') this.field('tags') this.ref('id') this.pipeline.remove(lunr.trimmer) for (var item in store) { this.add({ title: store[item].title, excerpt: store[item].excerpt, categories: store[item].categories, tags: store[item].tags, id: item }) } }); $(document).ready(function() { $('input#search').on('keyup', function () { var resultdiv = $('#results'); var query = $(this).val().toLowerCase(); var result = idx.query(function...","url": "http://localhost:4000/assets/js/lunr/lunr-en.js"

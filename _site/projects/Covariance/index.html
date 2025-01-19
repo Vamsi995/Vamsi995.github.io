@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Sparse Reward Propagation for Deep Reinforcement Learning | Alisetti Sai Vamsi</title>
-<meta name="description" content="Extracted a potential-based reward shaping function automatically from the MDP using a GCN and augumented it on the sprase reward system to propagate rewards and accelerate RL algorithms. PVF have been used as features into the GCN as they form the basis of value function space.">
+<!-- begin _includes/seo.html --><title>Covariance-Driven Graph Embedding for Real-Time Traffic Prediction | Alisetti Sai Vamsi</title>
+<meta name="description" content="A traffic prediction model leveraging temporal graph structures to model spatial and temporal dependencies within traffic networks. This framework utilizes covariance-driven feature analysis, eigenvalue decomposition, and attention mechanisms to capture dynamic patterns, enabling accurate and scalable traffic forecasting. Tested on real-world datasets like SZ-Taxi and Los-Loop, it outperforms traditional models in accuracy and robustness.">
 
 
   <meta name="author" content="Alisetti Sai Vamsi">
@@ -22,15 +22,15 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Alisetti Sai Vamsi">
-<meta property="og:title" content="Sparse Reward Propagation for Deep Reinforcement Learning">
-<meta property="og:url" content="http://localhost:4000/projects/SparseReward/">
+<meta property="og:title" content="Covariance-Driven Graph Embedding for Real-Time Traffic Prediction">
+<meta property="og:url" content="http://localhost:4000/projects/Covariance/">
 
 
-  <meta property="og:description" content="Extracted a potential-based reward shaping function automatically from the MDP using a GCN and augumented it on the sprase reward system to propagate rewards and accelerate RL algorithms. PVF have been used as features into the GCN as they form the basis of value function space.">
+  <meta property="og:description" content="A traffic prediction model leveraging temporal graph structures to model spatial and temporal dependencies within traffic networks. This framework utilizes covariance-driven feature analysis, eigenvalue decomposition, and attention mechanisms to capture dynamic patterns, enabling accurate and scalable traffic forecasting. Tested on real-world datasets like SZ-Taxi and Los-Loop, it outperforms traditional models in accuracy and robustness.">
 
 
 
-  <meta property="og:image" content="http://localhost:4000/assets/images/projects/Reward/Teaser.png">
+  <meta property="og:image" content="http://localhost:4000/assets/images/projects/Covariance.png">
 
 
 
@@ -47,7 +47,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/projects/SparseReward/">
+<link rel="canonical" href="http://localhost:4000/projects/Covariance/">
 
 
 
@@ -183,7 +183,7 @@
     
       
       
-        <li class="current">Sparse Reward Propagation for Deep Reinforcement Learning</li>
+        <li class="current">Covariance-Driven Graph Embedding for Real-Time Traffic Prediction</li>
       
     
   </ol>
@@ -219,7 +219,7 @@
     
       
       <h3>GitHub</h3>
-      <p><a href="https://github.com/Vamsi995/Reward-Propagation">https://github.com/Vamsi995/Reward-Propagation</a></p>
+      <p><a href="https://github.com/Vamsi995/Covariance-Temporal-GCN-for-Traffic-Forecasting/">https://github.com/Vamsi995/Covariance-Temporal-GCN-for-Traffic-Forecasting/</a></p>
 
       
     
@@ -231,13 +231,13 @@
     
       
       <h3>Responsibilities</h3>
-      
+      <p>Developed a novel dynamic traffic forecasting framework using PyTorch by leveraging covariance-based temporal graph embeddings to capture complex spatio-temporal dynamics. Integrated principal eigenvectors for adaptive feature selection and attention mechanisms for spatial correlations, achieving a 21.1% improvement in accuracy on the SZ-Taxi dataset.</p>
 
       
     
       
       <h3>Technology Frameworks & Languages</h3>
-      <p>Python, PyTorch</p>
+      <p>Python, PyTorch, Co-lab Notebooks, Numpy, Matplotlib</p>
 
       
     
@@ -248,8 +248,8 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Sparse Reward Propagation for Deep Reinforcement Learning">
-    <meta itemprop="description" content="Extracted a potential-based reward shaping function automatically from the MDP using a GCN and augumented it on the sprase reward system to propagate rewards and accelerate RL algorithms. PVF have been used as features into the GCN as they form the basis of value function space.">
+    <meta itemprop="headline" content="Covariance-Driven Graph Embedding for Real-Time Traffic Prediction">
+    <meta itemprop="description" content="A traffic prediction model leveraging temporal graph structures to model spatial and temporal dependencies within traffic networks. This framework utilizes covariance-driven feature analysis, eigenvalue decomposition, and attention mechanisms to capture dynamic patterns, enabling accurate and scalable traffic forecasting. Tested on real-world datasets like SZ-Taxi and Los-Loop, it outperforms traditional models in accuracy and robustness.">
     <meta itemprop="datePublished" content="2025-01-18T22:49:31-08:00">
     
 
@@ -257,7 +257,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/projects/SparseReward/" class="u-url" itemprop="url">Sparse Reward Propagation for Deep Reinforcement Learning
+            <a href="http://localhost:4000/projects/Covariance/" class="u-url" itemprop="url">Covariance-Driven Graph Embedding for Real-Time Traffic Prediction
 </a>
           </h1>
           
@@ -271,15 +271,144 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#getting-started">Getting Started</a><ul><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#installation">Installation</a></li><li><a href="#usage">Usage</a></li><li><a href="#datasets">Datasets</a></li></ul></li><li><a href="#results">Results</a></li><li><a href="#built-with">Built With</a></li><li><a href="#authors">Authors</a></li></ul>
 
             </nav>
           </aside>
         
-        <p>This work is based on the paper <a href="https://arxiv.org/abs/2010.02474">Reward Propagation using Graph Convolutional Networks</a> using the Proto Value Functions by <a href="https://www.jmlr.org/papers/volume8/mahadevan07a/mahadevan07a.pdf">Mahadevan and Maggioni</a> as features to the GCN. The underlying MDP of the Gridworld is captured as a graph which is then used to calculate the Proto Value Functions. The implementation is GCN is baseed on Thomas Kipf’s <a href="https://github.com/tkipf/pygcn">pytorch GCN implementation</a>. The environment currently is only a GridWorld and all the results have been produced using this environment. The actor critic network implementation was not from any library but our own implementation using linear function approximators.</p>
+        <p>A traffic prediction model leveraging temporal graph structures to model spatial and temporal dependencies within traffic networks. This framework utilizes covariance-driven feature analysis, eigenvalue decomposition, and attention mechanisms to capture dynamic patterns, enabling accurate and scalable traffic forecasting. Tested on real-world datasets like SZ-Taxi and Los-Loop, it outperforms traditional models in accuracy and robustness.</p>
 
-<p>The full report can be viewed here: <a href="/assets/images/projects/Reward/OELP_final_report.pdf">Sparse Reward Propagation Report</a></p>
+<p><strong>Project Report</strong>: <a href="https://github.com/Vamsi995/Covariance-Temporal-GCN-for-Traffic-Forecasting/blob/main/Project%20Report.pdf">Report</a></p>
 
+<p><strong>Project Slide Deck</strong>: <a href="https://docs.google.com/presentation/d/1Xiw7c_LlMP7tDnOEiedzYKLrP7Bj9h6jRilL-eaNb5k/edit?usp=sharing">Slides</a></p>
+
+<h2 id="getting-started">Getting Started</h2>
+<p>Follow the steps below to run this project locally for development and testing.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Ensure the following libraries and frameworks are installed:</p>
+
+<ul>
+  <li>PyTorch</li>
+  <li>NumPy</li>
+  <li>Matplotlib</li>
+</ul>
+
+<h3 id="installation">Installation</h3>
+<ul>
+  <li>Clone the repository:</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/Vamsi995/Covariance-Temporal-GCN-for-Traffic-Forecasting.git
+<span class="nb">cd </span>Covariance-Temporal-GCN-for-Traffic-Forecasting
+</code></pre></div></div>
+
+<ul>
+  <li>Install Dependencies:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="usage">Usage</h3>
+
+<ul>
+  <li>Train and evaluate the model:</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python train.py <span class="nt">--config</span> los_loop <span class="nt">--hidden_dim</span> 32 <span class="nt">--epochs</span> 100
+</code></pre></div></div>
+
+<ul>
+  <li>Run evaluations:</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python evaluate.py <span class="nt">--dataset</span> sz_taxi <span class="nt">--hidden_dim</span> 32 <span class="nt">--weights_path</span> ../cvtgcn.pkl
+</code></pre></div></div>
+
+<h3 id="datasets">Datasets</h3>
+<p>The model is validated on:</p>
+
+<ul>
+  <li><strong>SZ-Taxi</strong>: 156 major roads in Shenzhen, traffic speeds sampled every 15 minutes.</li>
+  <li><strong>Los-Loop</strong>: 207 sensors in Los Angeles highways, data sampled every 5 minutes.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">SZ-Taxi</th>
+      <th style="text-align: center">Los-Loop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="images/time_series_sz_taxi.png" alt="" /></td>
+      <td style="text-align: center"><img src="images/time_series_los_loop.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="results">Results</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Accuracy</th>
+      <th style="text-align: center">RMSE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="images/Accuracy.png" alt="" /></td>
+      <td style="text-align: center"><img src="images/RMSE.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">TGCN - SZ-Taxi</th>
+      <th style="text-align: center">cVTGCN - SZ-Taxi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="images/lostgcn.png" alt="" /></td>
+      <td style="text-align: center"><img src="images/loscVtgcn.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">TGCN - Los-Loop</th>
+      <th style="text-align: center">cVTGCN - Los-Loop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="images/tgcn.png" alt="" /></td>
+      <td style="text-align: center"><img src="images/cvtgcn.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="built-with">Built With</h2>
+
+<ul>
+  <li><a href="https://pytorch.org/">PyTorch</a> - Deep Learning Framework</li>
+  <li><a href="https://github.com/andrea-cavallo-98/STVNN">SpatioTemporal Neural Networks</a></li>
+  <li><a href="https://github.com/lehaifeng/T-GCN/tree/master">TGCN</a></li>
+</ul>
+
+<h2 id="authors">Authors</h2>
+<ul>
+  <li><a href="https://github.com/Vamsi995">Sai Vamsi Alisetti</a></li>
+  <li><a href="https://github.com/vikaskalagi">Vikas Kalagi</a></li>
+</ul>
 
         
       </section>
@@ -300,11 +429,11 @@
       
   <nav class="pagination">
     
-      <a href="/projects/ProjectAll/" class="pagination--pager" title="IIT Palakkad Project Allocation Portal
+      <a href="/projects/%20Multi%20Agent%20Reinforcement%20Learning%20for%20Cooperative%20and%20Independent%20behaviors%20on%20Highways%20and%20Ring%20Roads/" class="pagination--pager" title="Capstone Project: MARL for Cooperative and Independent Behaviors on Highways and Ring Roads
 ">Previous</a>
     
     
-      <a href="/projects/Tictactoe/" class="pagination--pager" title="Tic Tac Toe on FPGA
+      <a href="/projects/ExplainableSegmentAnything/" class="pagination--pager" title="Explainable Grounded Segment Anything
 ">Next</a>
     
   </nav>
