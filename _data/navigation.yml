@@ -9,6 +9,6 @@ main:
   - title: "Achievements"
     url: /achievements/
   - title: "CV"
-    url: /assets/CV/Resume.pdf/
+    url: /assets/CV/Resume.pdf
   - title: "Misc"
     url: /misc/
