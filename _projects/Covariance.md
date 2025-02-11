@@ -5,7 +5,7 @@ excerpt: "A traffic prediction model leveraging temporal graph structures to mod
 toc: true
 toc_sticky: true
 header:
-  teaser: /assets/images/projects/Covariance.png
+  teaser: /assets/images/projects/Covariance/Covariance.png
 sidebar:
   - title: "GitHub"
     text: <a href="https://github.com/Vamsi995/Covariance-Temporal-GCN-for-Traffic-Forecasting/">https://github.com/Vamsi995/Covariance-Temporal-GCN-for-Traffic-Forecasting/</a>
@@ -83,7 +83,7 @@ The model is validated on:
 
 SZ-Taxi                    | Los-Loop 
 :-------------------------:|:-------------------------:
-![](images/time_series_sz_taxi.png) | ![](images/time_series_los_loop.png)
+![](/assets/images/projects/Covariance/time_series_sz_taxi.png) | ![](/assets/images/projects/Covariance/time_series_los_loop.png)
 
 
 
@@ -91,16 +91,16 @@ SZ-Taxi                    | Los-Loop
 
 Accuracy                   | RMSE 
 :-------------------------:|:-------------------------:
-![](images/Accuracy.png)  |  ![](images/RMSE.png)
+![](/assets/images/projects/Covariance/Accuracy.png)  |  ![](/assets/images/projects/Covariance/RMSE.png)
 
 
 TGCN - SZ-Taxi             | cVTGCN - SZ-Taxi
 :-------------------------:|:-------------------------:
-![](images/lostgcn.png)  |  ![](images/loscVtgcn.png)
+![](/assets/images/projects/Covariance/lostgcn.png)  |  ![](/assets/images/projects/Covariance/loscVtgcn.png)
 
 TGCN - Los-Loop            | cVTGCN - Los-Loop
 :-------------------------:|:-------------------------:
-![](images/tgcn.png)  |  ![](images/cvtgcn.png)
+![](/assets/images/projects/Covariance/tgcn.png)  |  ![](/assets/images/projects/Covariance/cvtgcn.png)
 
 
 
