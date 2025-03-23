@@ -51,13 +51,19 @@ var store = [{
         "excerpt":"A traffic prediction model leveraging temporal graph structures to model spatial and temporal dependencies within traffic networks. This framework utilizes covariance-driven feature analysis, eigenvalue decomposition, and attention mechanisms to capture dynamic patterns, enabling accurate and scalable traffic forecasting. Tested on real-world datasets like SZ-Taxi and Los-Loop, it outperforms traditional models...","categories": [],
         "tags": [],
         "url": "/projects/Covariance/",
-        "teaser": "/assets/images/projects/Covariance.png"
+        "teaser": "/assets/images/projects/Covariance/Covariance.png"
       },{
         "title": "Explainable Grounded Segment Anything",
         "excerpt":"An image segmentation pipeline that leverages Grounding DINO and Segment Anything Model (SAM) for text-guided image segmentation. It uses Grounding DINO as the first step to generate bounding boxes around entities in the image based on a user-provided text prompt. These bounding boxes are then passed into the Segment Anything...","categories": [],
         "tags": [],
         "url": "/projects/ExplainableSegmentAnything/",
         "teaser": "/assets/images/projects/Explainable/explainable.png"
+      },{
+        "title": "Lamport Distributed Mutual Exclusion",
+        "excerpt":"Overview This repository implements a distributed mutual exclusion system using Lamport’s Distributed Mutual Exclusion Algorithm, where multiple clients maintain a blockchain-based transaction ledger and ensure safe money transfers via mutual exclusion. Each client holds a local copy of the blockchain and a balance table, ensuring consistent updates across the distributed...","categories": [],
+        "tags": [],
+        "url": "/projects/Lamport/",
+        "teaser": "/assets/images/projects/Lamport/lamport.png"
       },{
         "title": "Meet.me",
         "excerpt":"The recent pandemic has changed the ways of working collaboratively: it has moved to online services such as video conferencing. We aim to facilitate the collaboration experience with our application: meet.me. Meet.me has the features of chats, a whiteboard, screen-sharing, summary generation and telemetry. The whiteboard is a canvas with...","categories": [],
@@ -138,7 +144,7 @@ var store = [{
     "excerpt":"Indian Institute of Technology (IIT) Palakkad                                       (2018-2022) Course Work (CSE) Introduction to Programming Logic for Computing Data Structures and Algorithms Discrete Mathematics for Computer Science Design and Analysis of Algorithms Theory...","url": "http://localhost:4000/education/"
   },{
     "title": null,
-    "excerpt":" Hey Everyone!        I am a Master's Student in Computer Science at the University of California, Santa Barbara. I have done my Bachelors in Computer Science from IIT Palakkad. I am primarily interested in machine learning, specifically in reinforcement learning, with a mixed interest in vision and language models.       ","url": "http://localhost:4000/"
+    "excerpt":" Hey Everyone!        I am a Master's Student in Computer Science at the University of California, Santa Barbara. I have done my Bachelors in Computer Science from IIT Palakkad. I am primarily interested in machine learning, specifically in Graph Machine Learning and Reinforcement Learning.      ","url": "http://localhost:4000/"
   },{
     "title": null,
     "excerpt":"var idx = lunr(function () { this.field('title') this.field('excerpt') this.field('categories') this.field('tags') this.ref('id') this.pipeline.remove(lunr.trimmer) for (var item in store) { this.add({ title: store[item].title, excerpt: store[item].excerpt, categories: store[item].categories, tags: store[item].tags, id: item }) } }); $(document).ready(function() { $('input#search').on('keyup', function () { var resultdiv = $('#results'); var query = $(this).val().toLowerCase(); var result = idx.query(function...","url": "http://localhost:4000/assets/js/lunr/lunr-en.js"

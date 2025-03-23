@@ -12,9 +12,7 @@ sidebar:
   - title: "Role"
     text: "Team Lead"
   - title: "Responsibilities"
-    text: "Developed a novel dynamic traffic forecasting framework using PyTorch by leveraging covariance-based temporal graph
-embeddings to capture complex spatio-temporal dynamics. Integrated principal eigenvectors for adaptive feature selection and
-attention mechanisms for spatial correlations, achieving a 21.1% improvement in accuracy on the SZ-Taxi dataset."
+    text: "Developed a novel dynamic traffic forecasting framework using PyTorch by leveraging covariance-based temporal graph embeddings to capture complex spatio-temporal dynamics. Integrated principal eigenvectors for adaptive feature selection and attention mechanisms for spatial correlations, achieving a 21.1% improvement in accuracy on the SZ-Taxi dataset."
   - title: "Technology Frameworks & Languages"
     text: "Python, PyTorch, Co-lab Notebooks, Numpy, Matplotlib"
 gallery:
