@@ -8,7 +8,7 @@ header:
   teaser: /assets/images/projects/GoRuntime/goruntime.png
 sidebar:
   - title: "GitHub"
-    text: <a href="https://github.com/Vamsi995/recovery-go">https://github.com/Vamsi995/recovery-go</a>
+    text: <a href="https://github.com/Vamsi995/go-fair-scheduler">https://github.com/Vamsi995/go-fair-scheduler</a>
   - title: "Role"
     text: "Team Lead"
   - title: "Responsibilities"
