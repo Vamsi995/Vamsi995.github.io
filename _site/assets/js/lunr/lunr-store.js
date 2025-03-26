@@ -89,6 +89,12 @@ var store = [{
         "url": "/projects/ProjectAll/",
         "teaser": "/assets/images/projects/ProjectAllocation/Teaser.png"
       },{
+        "title": "Raft-2PC: Distributed Transaction Processing with Raft and Two-Phase Commit",
+        "excerpt":"Overview This project implements a fault-tolerant distributed transaction processing system using a combination of Raft consensus and Two-Phase Commit (2PC). The system is designed for a simple banking application where clients initiate transactions involving data partitions (shards) replicated across multiple clusters of servers. Intra-shard transactions are handled using the Raft...","categories": [],
+        "tags": [],
+        "url": "/projects/Raft/",
+        "teaser": "/assets/images/projects/Raft/raft2pc.png"
+      },{
         "title": "Sparse Reward Propagation for Deep Reinforcement Learning",
         "excerpt":"This work is based on the paper Reward Propagation using Graph Convolutional Networks using the Proto Value Functions by Mahadevan and Maggioni as features to the GCN. The underlying MDP of the Gridworld is captured as a graph which is then used to calculate the Proto Value Functions. The implementation...","categories": [],
         "tags": [],
