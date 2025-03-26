@@ -59,6 +59,12 @@ var store = [{
         "url": "/projects/ExplainableSegmentAnything/",
         "teaser": "/assets/images/projects/Explainable/explainable.png"
       },{
+        "title": "Are your Go Routines Treated Unfairly?",
+        "excerpt":"This project investigates fairness in the Go runtime scheduler and proposes modifications to improve scheduling for long-running goroutines. Our modifications introduce alternative scheduling policies to address starvation issues in Go’s concurrency model. 📌 Overview The Go runtime scheduler is responsible for efficiently distributing goroutines across logical processors. However, we observed...","categories": [],
+        "tags": [],
+        "url": "/projects/GoRuntime/",
+        "teaser": "/assets/images/projects/GoRuntime/goruntime.png"
+      },{
         "title": "Lamport Distributed Mutual Exclusion",
         "excerpt":"Overview This repository implements a distributed mutual exclusion system using Lamport’s Distributed Mutual Exclusion Algorithm, where multiple clients maintain a blockchain-based transaction ledger and ensure safe money transfers via mutual exclusion. Each client holds a local copy of the blockchain and a balance table, ensuring consistent updates across the distributed...","categories": [],
         "tags": [],

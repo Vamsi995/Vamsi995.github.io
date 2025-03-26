@@ -12,7 +12,7 @@ sidebar:
   - title: "Role"
     text: "Team Lead"
   - title: "Responsibilities"
-    text: "Built a distributed mutual exclusion system using python threads as clients and following lamport's distributed mutual exclusion algorithm."
+    text: "Built a distributed transaction processing banking system using raft and 2 phase commit protocols for consensus."
   - title: "Technology Frameworks & Languages"
     text: "Python, Inter Process Communication, TCP/UDP Sockets"
 gallery:

@@ -1,0 +1,608 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Are your Go Routines Treated Unfairly? | Alisetti Sai Vamsi</title>
+<meta name="description" content="This project investigates fairness in the Go runtime scheduler and proposes modifications to improve scheduling for long-running goroutines. Our modifications introduce alternative scheduling policies to address starvation issues in Go’s concurrency model.">
+
+
+  <meta name="author" content="Alisetti Sai Vamsi">
+  
+  <meta property="article:author" content="Alisetti Sai Vamsi">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Alisetti Sai Vamsi">
+<meta property="og:title" content="Are your Go Routines Treated Unfairly?">
+<meta property="og:url" content="http://localhost:4000/projects/GoRuntime/">
+
+
+  <meta property="og:description" content="This project investigates fairness in the Go runtime scheduler and proposes modifications to improve scheduling for long-running goroutines. Our modifications introduce alternative scheduling policies to address starvation issues in Go’s concurrency model.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/projects/GoRuntime/goruntime.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2025-03-25T19:21:00-07:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/projects/GoRuntime/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Alisetti Sai Vamsi",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/landing/logo2.png" alt="Alisetti Sai Vamsi"></a>
+        
+        <a class="site-title" href="/">
+          Alisetti Sai Vamsi
+          <span class="site-subtitle">Portfolio</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/research/">Research</a>
+            </li><li class="masthead__menu-item">
+              <a href="/projects/">Projects</a>
+            </li><li class="masthead__menu-item">
+              <a href="/education/">Education</a>
+            </li><li class="masthead__menu-item">
+              <a href="/achievements/">Achievements</a>
+            </li><li class="masthead__menu-item">
+              <a href="/assets/CV/Resume.pdf">CV</a>
+            </li><li class="masthead__menu-item">
+              <a href="/misc/">Misc</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">></span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/projects" itemprop="item"><span itemprop="name">Projects</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">></span>
+      
+    
+      
+      
+        <li class="current">Are your Go Routines Treated Unfairly?</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true},
+      jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
+      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
+      TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+      equationNumbers: {
+      autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      <h3>GitHub</h3>
+      <p><a href="https://github.com/Vamsi995/recovery-go">https://github.com/Vamsi995/recovery-go</a></p>
+
+      
+    
+      
+      <h3>Role</h3>
+      <p>Team Lead</p>
+
+      
+    
+      
+      <h3>Responsibilities</h3>
+      <p>Implemented alternate scheduling policies to add fairness to long running go routines in the go runtime system.</p>
+
+      
+    
+      
+      <h3>Technology Frameworks & Languages</h3>
+      <p>Python, Inter Process Communication, TCP/UDP Sockets</p>
+
+      
+    
+    
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Are your Go Routines Treated Unfairly?">
+    <meta itemprop="description" content="This project investigates fairness in the Go runtime scheduler and proposes modifications to improve scheduling for long-running goroutines. Our modifications introduce alternative scheduling policies to address starvation issues in Go’s concurrency model.">
+    <meta itemprop="datePublished" content="2025-03-25T19:21:00-07:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/projects/GoRuntime/" class="u-url" itemprop="url">Are your Go Routines Treated Unfairly?
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#-overview">📌 Overview</a></li><li><a href="#-modifications-to-the-go-runtime">🚀 Modifications to the Go Runtime</a><ul><li><a href="#1️⃣-cyclic-swapping-of-go-routines">1️⃣ Cyclic Swapping of Go Routines</a></li><li><a href="#2️⃣-phase-splitting-of-processors">2️⃣ Phase Splitting of Processors</a></li><li><a href="#3️⃣-phase-splitting-with-differential-preemption">3️⃣ Phase Splitting with Differential Preemption</a></li></ul></li><li><a href="#-experimental-setup">🔍 Experimental Setup</a></li><li><a href="#-findings">📊 Findings</a></li><li><a href="#-how-to-build--run">🔧 How to Build &amp; Run</a></li><li><a href="#-additional-resources">📎 Additional Resources</a></li><li><a href="#contributors">Contributors</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>This project investigates fairness in the Go runtime scheduler and proposes modifications to improve scheduling for long-running goroutines. Our modifications introduce alternative scheduling policies to address starvation issues in Go’s concurrency model.</p>
+
+<p><img width="1288" alt="runtimeproc" src="https://github.com/user-attachments/assets/89a203e8-dab2-46ca-83ff-49a7299401d8" /></p>
+
+<h2 id="-overview">📌 Overview</h2>
+
+<p>The Go runtime scheduler is responsible for efficiently distributing goroutines across logical processors. However, we observed that long-running goroutines can suffer from starvation when preempted and placed back into the global run queue. This project presents scheduling enhancements to mitigate unfair scheduling and improve overall performance. We highlighted the two key problems in long running go routines:</p>
+<ul>
+  <li>Long running go routines once preempted are kept back in the global runqueue, which
+then have to wait for one of the local queue to be empty to be pulled back into the logical
+processor’s local queue. This in a way is causing a starvation on long running go routines
+that execute for multiple time slices.</li>
+  <li>Additionally when most of the processors preempt the long running go routines at once,
+they have to contend for the global run queue lock.</li>
+</ul>
+
+<h2 id="-modifications-to-the-go-runtime">🚀 Modifications to the Go Runtime</h2>
+
+<p>We propose three key modifications to Go’s scheduling mechanism:</p>
+
+<h3 id="1️⃣-cyclic-swapping-of-go-routines">1️⃣ <strong>Cyclic Swapping of Go Routines</strong></h3>
+<ul>
+  <li>Instead of placing preempted goroutines in the global run queue, they are passed to the next logical processor’s local queue.</li>
+  <li>This reduces contention for the global queue and ensures preempted goroutines resume execution without waiting for an empty local queue.</li>
+</ul>
+
+<p><img src="https://github.com/user-attachments/assets/462986ef-d9d5-4a07-9668-dd73c5f2f8c9" alt="cycle" /></p>
+
+<h3 id="2️⃣-phase-splitting-of-processors">2️⃣ <strong>Phase Splitting of Processors</strong></h3>
+<ul>
+  <li>Logical processors are divided into two groups:
+    <ul>
+      <li>One group processes short-running goroutines.</li>
+      <li>The other processes long-running goroutines.</li>
+    </ul>
+  </li>
+  <li>Short-running goroutines transition into the long-running group upon preemption, ensuring a balanced workload distribution.</li>
+</ul>
+
+<p><img src="https://github.com/user-attachments/assets/68982943-5a60-453f-acfa-6d46bb19036f" alt="phasesplit" /></p>
+
+<h3 id="3️⃣-phase-splitting-with-differential-preemption">3️⃣ <strong>Phase Splitting with Differential Preemption</strong></h3>
+<ul>
+  <li>Introduces a variable time slice:
+    <ul>
+      <li>Short-running processors maintain a standard 10ms time slice.</li>
+      <li>Long-running processors have an extended time slice (20ms).</li>
+    </ul>
+  </li>
+  <li>
+    <p>This reduces excessive preemption for long-running tasks, improving overall execution efficiency.</p>
+
+    <p><img src="https://github.com/user-attachments/assets/4bbf4d6f-ddb7-418c-8756-4e71c0e8654f" alt="goruntime" /></p>
+  </li>
+</ul>
+
+<h2 id="-experimental-setup">🔍 Experimental Setup</h2>
+
+<ul>
+  <li>We categorized workloads into <strong>short-running</strong> and <strong>long-running</strong> goroutines based on execution duration.</li>
+  <li>We analyzed scheduler traces using the Go <code class="language-plaintext highlighter-rouge">trace</code> tool to observe scheduling patterns.</li>
+  <li>Three workloads were tested:
+    <ul>
+      <li>Simple loops</li>
+      <li>Fibonacci computation</li>
+      <li>Matrix multiplication</li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://github.com/user-attachments/assets/ece98895-4ebf-402b-add6-97c159201a97" alt="space-1.jpg" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Loop Short Running Go Routines</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://github.com/user-attachments/assets/f203966e-777e-4bf1-9e84-d2151584d52b" alt="space-1.jpg" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Loop Long Running Go Routines</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="-findings">📊 Findings</h2>
+
+<ul>
+  <li>The default Go scheduler can cause long-running goroutines to starve when short-running goroutines dominate the local queues.</li>
+  <li>Our modified scheduler significantly reduces average wait times and improves fairness for long-running workloads.</li>
+  <li>We identified additional Go runtime tuning parameters such as <code class="language-plaintext highlighter-rouge">schedtick</code>, <code class="language-plaintext highlighter-rouge">timeslice</code>, and <code class="language-plaintext highlighter-rouge">work stealing batch size</code> that can further refine performance.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://github.com/user-attachments/assets/fdd44214-dd0d-4039-a0f3-626124dd959c" alt="space-1.jpg" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Average Scheduler Wait Times per Go Routine in (s)</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://github.com/user-attachments/assets/1bd10ce8-058b-48ad-a05b-98898c1966bb" alt="space-1.jpg" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Global &amp; Local Runqueue Sizes in normal operation</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://github.com/user-attachments/assets/37487243-6480-4f80-b424-604613074c26" alt="space-1.jpg" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><em>Global &amp; Local Runqueue Sizes in phase splitting runtime scheduler</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="-how-to-build--run">🔧 How to Build &amp; Run</h2>
+
+<ol>
+  <li>
+    <p>Clone the Go source code:</p>
+
+    <p>```sh
+git clone https://github.com/golang/go.git</p>
+  </li>
+  <li>
+    <p>Install the Go compiler from go.dev.</p>
+  </li>
+  <li>
+    <p>Replace the following files with our modified versions:</p>
+  </li>
+</ol>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">src/runtime/runtime2.go</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">src/runtime/proc.go</code></p>
+  </li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cp </span>path/to/modified/runtime2.go go/src/runtime/
+<span class="nb">cp </span>path/to/modified/proc.go go/src/runtime/
+</code></pre></div></div>
+
+<ol>
+  <li>Set up the custom Go runtime:</li>
+</ol>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">GOROOT</span><span class="o">=</span>/path/to/custom/go
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$GOROOT</span>/bin:<span class="nv">$PATH</span>
+</code></pre></div></div>
+<ol>
+  <li>Run your Go programs using:</li>
+</ol>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>go run your_program.go
+</code></pre></div></div>
+
+<p>Yup this works like magic, no need to manually build the whole sourcefile using <code class="language-plaintext highlighter-rouge">./make.bash</code> from the src directory.</p>
+
+<h2 id="-additional-resources">📎 Additional Resources</h2>
+
+<ul>
+  <li>
+    <p>📄 <a href="https://drive.google.com/file/d/1GYJYoit7bZT92-jLDyahnoBf-AIQQ-PQ/view?usp=sharing">Project Report</a></p>
+  </li>
+  <li>
+    <p>🎥 <a href="https://drive.google.com/file/d/1lpu5qHpndmcb8LV8V11Wor_UzPE_Gut8/view">Demo Video</a></p>
+  </li>
+</ul>
+
+<h2 id="contributors">Contributors</h2>
+
+<ul>
+  <li><a href="https://github.com/Vamsi995">Sai Vamsi Alisetti</a></li>
+  <li><a href="https://github.com/Abhi12122000">Abhishek Kumar</a></li>
+</ul>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-03-25T19:21:00-07:00">March 25, 2025</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/projects/ExplainableSegmentAnything/" class="pagination--pager" title="Explainable Grounded Segment Anything
+">Previous</a>
+    
+    
+      <a href="/projects/Lamport/" class="pagination--pager" title="Lamport Distributed Mutual Exclusion
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/vumsee_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        
+      
+        
+          <li><a href="https://facebook.com/alisetti.vamsi" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+          <li><a href="https://github.com/Vamsi995" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://instagram.com/_v.um.see_" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://stackoverflow.com/users/12236439/sai-vamsi" rel="nofollow noopener noreferrer"><i class="fab fa-stack-overflow" aria-hidden="true"></i> StackOverflow</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/sai-vamsi-alisetti/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        
+      
+        
+          <li><a href="mailto:saivamsi.ds123@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Alisetti Sai Vamsi. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
