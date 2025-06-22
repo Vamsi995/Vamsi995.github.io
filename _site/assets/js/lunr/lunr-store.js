@@ -41,6 +41,12 @@ var store = [{
         "url": "/algorithm/test/",
         "teaser": "/assets/images/images.jpeg"
       },{
+        "title": "Are your Go Routines Treated Unfairly?",
+        "excerpt":"Here is the link to my blog on medium: Are your Go Routines Treated Unfairly?  ","categories": ["Runtime Systems"],
+        "tags": ["Systems"],
+        "url": "/runtime%20systems/GoRuntime/",
+        "teaser": "/assets/images/images.jpeg"
+      },{
         "title": "Capstone Project: MARL for Cooperative and Independent Behaviors on Highways and Ring Roads",
         "excerpt":"This project is an extension to the work done by Prof. Cathy Wu in the paper Dissipating stop-and-go waves in closed and open networks via deep reinforcement learning and the work of Fang-Chieh Chou in the paper The Lord of the Ring Road: A Review and Evaluation of Autonomous Control...","categories": [],
         "tags": [],
@@ -142,6 +148,9 @@ var store = [{
   },{
     "title": "Scheduler as a Platform",
     "excerpt":"Here is the link to my blog: Scheduler as a Platform  ","url": "http://localhost:4000/_posts/2023-09-21-test/"
+  },{
+    "title": "Are your Go Routines Treated Unfairly?",
+    "excerpt":"Here is the link to my blog on medium: Are your Go Routines Treated Unfairly?  ","url": "http://localhost:4000/_posts/2025-03-26-GoRuntime/"
   },{
     "title": "About Me",
     "excerpt":"I am a fresh graduate from IIT Palakkad majoring in Computer Science &amp; Engineering with a potent blend of industry and research experiences. I am interested in problem-solving be it in a social aspect or analytical aspect, and nothing brings me more joy than solving something that is on the...","url": "http://localhost:4000/CV/"
