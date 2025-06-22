@@ -137,6 +137,12 @@ var store = [{
         "url": "/research/ParaphraseGen/",
         "teaser": "/assets/images/projects/Paraphrase/nlp.png"
       },{
+        "title": "Beyond Attention: Learning Spatio-Temporal Dynamics with Emergent Interpretable Topologies",
+        "excerpt":"Spatio-temporal forecasting is critical in applications such as traffic prediction, energy demand modeling, and weather monitoring. While Graph Attention Networks (GATs) are popular for modeling spatial dependencies, they rely on predefined adjacency structures and dynamic attention scores, introducing inductive biases and computational overhead that can obscure interpretability. We propose InterGAT,...","categories": [],
+        "tags": [],
+        "url": "/research/SparseReward%20copy/",
+        "teaser": "/assets/images/projects/BeyondAttn/Beyond%20Attention.png"
+      },{
         "title": "Sparse Reward Propagation for Deep Reinforcement Learning",
         "excerpt":"This work is based on the paper Reward Propagation using Graph Convolutional Networks using the Proto Value Functions by Mahadevan and Maggioni as features to the GCN. The underlying MDP of the Gridworld is captured as a graph which is then used to calculate the Proto Value Functions. The implementation...","categories": [],
         "tags": [],
