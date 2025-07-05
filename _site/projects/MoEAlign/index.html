@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Covariance-Driven Graph Embedding for Real-Time Traffic Prediction | Alisetti Sai Vamsi</title>
-<meta name="description" content="A traffic prediction model leveraging temporal graph structures to model spatial and temporal dependencies within traffic networks. This framework utilizes covariance-driven feature analysis, eigenvalue decomposition, and attention mechanisms to capture dynamic patterns, enabling accurate and scalable traffic forecasting. Tested on real-world datasets like SZ-Taxi and Los-Loop, it outperforms traditional models in accuracy and robustness.">
+<!-- begin _includes/seo.html --><title>MoE Align: Quantifying Expert Similarity Across Transformer Layers | Alisetti Sai Vamsi</title>
+<meta name="description" content="Modern Mixture-of-Experts (MoE) transformers activate a subset of expert functions per token, enabling large-scale models with efficient inference. These expert layers are usually assumed to be depth-specific and non-interchangeable. This project explores whether experts across layers perform functionally similar transformations, making cross-layer expert reuse feasible.">
 
 
   <meta name="author" content="Alisetti Sai Vamsi">
@@ -22,15 +22,15 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Alisetti Sai Vamsi">
-<meta property="og:title" content="Covariance-Driven Graph Embedding for Real-Time Traffic Prediction">
-<meta property="og:url" content="http://localhost:4000/projects/Covariance/">
+<meta property="og:title" content="MoE Align: Quantifying Expert Similarity Across Transformer Layers">
+<meta property="og:url" content="http://localhost:4000/projects/MoEAlign/">
 
 
-  <meta property="og:description" content="A traffic prediction model leveraging temporal graph structures to model spatial and temporal dependencies within traffic networks. This framework utilizes covariance-driven feature analysis, eigenvalue decomposition, and attention mechanisms to capture dynamic patterns, enabling accurate and scalable traffic forecasting. Tested on real-world datasets like SZ-Taxi and Los-Loop, it outperforms traditional models in accuracy and robustness.">
+  <meta property="og:description" content="Modern Mixture-of-Experts (MoE) transformers activate a subset of expert functions per token, enabling large-scale models with efficient inference. These expert layers are usually assumed to be depth-specific and non-interchangeable. This project explores whether experts across layers perform functionally similar transformations, making cross-layer expert reuse feasible.">
 
 
 
-  <meta property="og:image" content="http://localhost:4000/assets/images/projects/Covariance/Covariance.png">
+  <meta property="og:image" content="http://localhost:4000/assets/images/projects/MoEAlign/activations.png">
 
 
 
@@ -47,7 +47,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/projects/Covariance/">
+<link rel="canonical" href="http://localhost:4000/projects/MoEAlign/">
 
 
 
@@ -183,7 +183,7 @@
     
       
       
-        <li class="current">Covariance-Driven Graph Embedding for Real-Time Traffic Prediction</li>
+        <li class="current">MoE Align: Quantifying Expert Similarity Across Transformer Layers</li>
       
     
   </ol>
@@ -219,25 +219,13 @@
     
       
       <h3>GitHub</h3>
-      <p><a href="https://github.com/Vamsi995/Covariance-Temporal-GCN-for-Traffic-Forecasting/">https://github.com/Vamsi995/Covariance-Temporal-GCN-for-Traffic-Forecasting/</a></p>
-
-      
-    
-      
-      <h3>Role</h3>
-      <p>Team Lead</p>
-
-      
-    
-      
-      <h3>Responsibilities</h3>
-      <p>Developed a novel dynamic traffic forecasting framework using PyTorch by leveraging covariance-based temporal graph embeddings to capture complex spatio-temporal dynamics. Integrated principal eigenvectors for adaptive feature selection and attention mechanisms for spatial correlations, achieving a 21.1% improvement in accuracy on the SZ-Taxi dataset.</p>
+      <p><a href="https://github.com/Vamsi995/exsim">https://github.com/Vamsi995/exsim</a></p>
 
       
     
       
       <h3>Technology Frameworks & Languages</h3>
-      <p>Python, PyTorch, Co-lab Notebooks, Numpy, Matplotlib</p>
+      <p>Python, PyTorch, Co-lab Notebooks, Streamlit, Flask, Docker</p>
 
       
     
@@ -248,8 +236,8 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Covariance-Driven Graph Embedding for Real-Time Traffic Prediction">
-    <meta itemprop="description" content="A traffic prediction model leveraging temporal graph structures to model spatial and temporal dependencies within traffic networks. This framework utilizes covariance-driven feature analysis, eigenvalue decomposition, and attention mechanisms to capture dynamic patterns, enabling accurate and scalable traffic forecasting. Tested on real-world datasets like SZ-Taxi and Los-Loop, it outperforms traditional models in accuracy and robustness.">
+    <meta itemprop="headline" content="MoE Align: Quantifying Expert Similarity Across Transformer Layers">
+    <meta itemprop="description" content="Modern Mixture-of-Experts (MoE) transformers activate a subset of expert functions per token, enabling large-scale models with efficient inference. These expert layers are usually assumed to be depth-specific and non-interchangeable. This project explores whether experts across layers perform functionally similar transformations, making cross-layer expert reuse feasible.">
     <meta itemprop="datePublished" content="2025-07-04T17:29:43-07:00">
     
 
@@ -257,7 +245,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/projects/Covariance/" class="u-url" itemprop="url">Covariance-Driven Graph Embedding for Real-Time Traffic Prediction
+            <a href="http://localhost:4000/projects/MoEAlign/" class="u-url" itemprop="url">MoE Align: Quantifying Expert Similarity Across Transformer Layers
 </a>
           </h1>
           
@@ -271,144 +259,191 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#getting-started">Getting Started</a><ul><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#installation">Installation</a></li><li><a href="#usage">Usage</a></li><li><a href="#datasets">Datasets</a></li></ul></li><li><a href="#results">Results</a></li><li><a href="#built-with">Built With</a></li><li><a href="#authors">Authors</a></li></ul>
+              <ul class="toc__menu"><li><a href="#-overview">🧠 Overview</a></li><li><a href="#-core-idea">🔍 Core Idea</a></li><li><a href="#-problem-formulation">🧪 Problem Formulation</a></li><li><a href="#️-experimental-setup">⚙️ Experimental Setup</a></li><li><a href="#-results">📊 Results</a><ul><li><a href="#-cross-layer-expert-alignment">🔁 Cross-Layer Expert Alignment</a></li></ul></li><li><a href="#-additional-experiment-layer-swapping">🧩 Additional Experiment: Layer Swapping</a></li><li><a href="#-future-work">🔮 Future Work</a></li><li><a href="#-authors">👥 Authors</a></li><li><a href="#-resources">📎 Resources</a></li><li><a href="#-references">📚 References</a></li><li><a href="#-conclusion">💡 Conclusion</a></li></ul>
 
             </nav>
           </aside>
         
-        <p>A traffic prediction model leveraging temporal graph structures to model spatial and temporal dependencies within traffic networks. This framework utilizes covariance-driven feature analysis, eigenvalue decomposition, and attention mechanisms to capture dynamic patterns, enabling accurate and scalable traffic forecasting. Tested on real-world datasets like SZ-Taxi and Los-Loop, it outperforms traditional models in accuracy and robustness.</p>
+        <h2 id="-overview">🧠 Overview</h2>
 
-<p><strong>Project Report</strong>: <a href="https://github.com/Vamsi995/Covariance-Temporal-GCN-for-Traffic-Forecasting/blob/main/Project%20Report.pdf">Report</a></p>
+<p>Modern <strong>Mixture-of-Experts (MoE)</strong> transformers activate a subset of expert functions per token, enabling large-scale models with efficient inference. These expert layers are usually assumed to be depth-specific and non-interchangeable. This project explores whether experts across layers perform <strong>functionally similar transformations</strong>, making cross-layer <strong>expert reuse</strong> feasible.</p>
 
-<p><strong>Project Slide Deck</strong>: <a href="https://docs.google.com/presentation/d/1Xiw7c_LlMP7tDnOEiedzYKLrP7Bj9h6jRilL-eaNb5k/edit?usp=sharing">Slides</a></p>
+<h2 id="-core-idea">🔍 Core Idea</h2>
 
-<h2 id="getting-started">Getting Started</h2>
-<p>Follow the steps below to run this project locally for development and testing.</p>
+<p>We propose a method to <strong>quantify the functional similarity</strong> between experts in different transformer layers by introducing a <strong>lightweight adapter</strong>. This adapter aligns the input distribution of one expert to another, allowing us to evaluate output similarity using <strong>Mean Squared Error (MSE)</strong>.</p>
 
-<h3 id="prerequisites">Prerequisites</h3>
-<p>Ensure the following libraries and frameworks are installed:</p>
+<p>If such an adapter achieves low MSE, it implies functional similarity (up to input transformation) between the two experts.</p>
 
-<ul>
-  <li>PyTorch</li>
-  <li>NumPy</li>
-  <li>Matplotlib</li>
-</ul>
+<h2 id="-problem-formulation">🧪 Problem Formulation</h2>
 
-<h3 id="installation">Installation</h3>
-<ul>
-  <li>Clone the repository:</li>
-</ul>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/Vamsi995/Covariance-Temporal-GCN-for-Traffic-Forecasting.git
-<span class="nb">cd </span>Covariance-Temporal-GCN-for-Traffic-Forecasting
-</code></pre></div></div>
+<p>Let:</p>
 
 <ul>
-  <li>Install Dependencies:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
-</code></pre></div>    </div>
-  </li>
+  <li>$( f_{\ell, e} : \mathbb{R}^d \rightarrow \mathbb{R}^d )$ be the transformation implemented by expert $( e )$ in layer $( \ell )$</li>
+  <li>$( D_{\ell,e} )$ be the empirical input distribution of expert $( (\ell, e) )$</li>
+  <li>$( A : \mathbb{R}^d \rightarrow \mathbb{R}^d )$ be an adapter function</li>
 </ul>
 
-<h3 id="usage">Usage</h3>
+<p>We aim to find:</p>
+
+<p>$[
+f_{\ell_2, e_2}(A(x)) \approx f_{\ell_1, e_1}(x), \quad \forall x \sim D_{\ell_1, e_1}
+]$</p>
+
+<p>The adapter is defined as:</p>
+
+<p>$[
+A(x) = \text{LayerNorm}(Wx + b), \quad W \in \mathbb{R}^{d \times d}, b \in \mathbb{R}^d
+]$</p>
+
+<p>The training objective is:</p>
+
+<p>$[
+\mathcal{L}_{\text{MSE}} = \mathbb{E}_{x \sim D_{\ell_1,e_1}} \left[ | f_{\ell_2,e_2}(A(x)) - f_{\ell_1,e_1}(x) |_2^2 \right]
+]$</p>
+
+<h2 id="️-experimental-setup">⚙️ Experimental Setup</h2>
 
 <ul>
-  <li>Train and evaluate the model:</li>
+  <li><strong>Model</strong>: <a href="https://huggingface.co/Qwen">Qwen1.5-MoE-A2.7B</a> (decoder-only MoE transformer)</li>
+  <li><strong>Tokenization</strong>: QwenTokenizer</li>
+  <li><strong>Hardware</strong>: 1x NVIDIA A100 GPU</li>
+  <li><strong>Framework</strong>: HuggingFace Transformers</li>
+  <li><strong>Data</strong>: Subset of English Wikipedia</li>
+  <li><strong>Precision</strong>: float16</li>
+  <li><strong>Adapter</strong>: Linear + LayerNorm trained to minimize MSE</li>
 </ul>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python train.py <span class="nt">--config</span> los_loop <span class="nt">--hidden_dim</span> 32 <span class="nt">--epochs</span> 100
-</code></pre></div></div>
+<h2 id="-results">📊 Results</h2>
 
-<ul>
-  <li>Run evaluations:</li>
-</ul>
+<h3 id="-cross-layer-expert-alignment">🔁 Cross-Layer Expert Alignment</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python evaluate.py <span class="nt">--dataset</span> sz_taxi <span class="nt">--hidden_dim</span> 32 <span class="nt">--weights_path</span> ../cvtgcn.pkl
-</code></pre></div></div>
+<p><img src="https://github.com/user-attachments/assets/14f0fae5-af10-4dfe-b1d0-18ea3f786f2e" alt="activations (1)" /></p>
 
-<h3 id="datasets">Datasets</h3>
-<p>The model is validated on:</p>
-
-<ul>
-  <li><strong>SZ-Taxi</strong>: 156 major roads in Shenzhen, traffic speeds sampled every 15 minutes.</li>
-  <li><strong>Los-Loop</strong>: 207 sensors in Los Angeles highways, data sampled every 5 minutes.</li>
-</ul>
+<p>We compare outputs of Layer 1 and Layer 2 experts using learned adapters. Example MSE alignment losses:</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">SZ-Taxi</th>
-      <th style="text-align: center">Los-Loop</th>
+      <th>L1→L2</th>
+      <th>E0</th>
+      <th>E4</th>
+      <th>E8</th>
+      <th>E12</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><img src="/assets/images/projects/Covariance/time_series_sz_taxi.png" alt="" /></td>
-      <td style="text-align: center"><img src="/assets/images/projects/Covariance/time_series_los_loop.png" alt="" /></td>
+      <td>E0</td>
+      <td>8.34</td>
+      <td>7.71</td>
+      <td>7.81</td>
+      <td>7.87</td>
+    </tr>
+    <tr>
+      <td>E4</td>
+      <td>0.017</td>
+      <td>0.010</td>
+      <td>0.018</td>
+      <td>0.014</td>
+    </tr>
+    <tr>
+      <td>E8</td>
+      <td>0.017</td>
+      <td>0.011</td>
+      <td>0.016</td>
+      <td>0.014</td>
+    </tr>
+    <tr>
+      <td>E12</td>
+      <td>0.015</td>
+      <td>0.009</td>
+      <td>0.014</td>
+      <td>0.011</td>
     </tr>
   </tbody>
 </table>
 
-<h2 id="results">Results</h2>
+<p>📌 <strong>Observation</strong>: Expert 0 at Layer 1 shows consistently high MSE with all Layer 2 experts, indicating a functionally distinct behavior.</p>
+
+<h2 id="-additional-experiment-layer-swapping">🧩 Additional Experiment: Layer Swapping</h2>
+
+<p>To test broader functional similarity, we swapped sparse-FFN blocks across layers in the <code class="language-plaintext highlighter-rouge">Switch-Base-8</code> model and evaluated on <strong>MNLI</strong>:</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">Accuracy</th>
-      <th style="text-align: center">RMSE</th>
+      <th>Swapped Layers</th>
+      <th>Accuracy</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><img src="/assets/images/projects/Covariance/Accuracy.png" alt="" /></td>
-      <td style="text-align: center"><img src="/assets/images/projects/Covariance/RMSE.png" alt="" /></td>
+      <td>1 &lt;-&gt; 3</td>
+      <td>0.74</td>
+    </tr>
+    <tr>
+      <td>1 &lt;-&gt; 5</td>
+      <td>0.728</td>
+    </tr>
+    <tr>
+      <td>1 &lt;-&gt; 7</td>
+      <td>0.654</td>
+    </tr>
+    <tr>
+      <td>1 &lt;-&gt; 9</td>
+      <td>0.378</td>
+    </tr>
+    <tr>
+      <td>1 &lt;-&gt; 11</td>
+      <td>0.406</td>
     </tr>
   </tbody>
 </table>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">TGCN - SZ-Taxi</th>
-      <th style="text-align: center">cVTGCN - SZ-Taxi</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><img src="/assets/images/projects/Covariance/lostgcn.png" alt="" /></td>
-      <td style="text-align: center"><img src="/assets/images/projects/Covariance/loscVtgcn.png" alt="" /></td>
-    </tr>
-  </tbody>
-</table>
+<p>📌 <strong>Observation</strong>: Functional similarity decays rapidly with layer distance.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">TGCN - Los-Loop</th>
-      <th style="text-align: center">cVTGCN - Los-Loop</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><img src="/assets/images/projects/Covariance/tgcn.png" alt="" /></td>
-      <td style="text-align: center"><img src="/assets/images/projects/Covariance/cvtgcn.png" alt="" /></td>
-    </tr>
-  </tbody>
-</table>
+<p><img width="649" alt="token_routing_heatmap" src="https://github.com/user-attachments/assets/c44a656f-8b43-4879-a9bd-dc9752fa99cf" /></p>
 
-<h2 id="built-with">Built With</h2>
+<p>Swapping entire MoE blocks (router + experts) between layers confirms that closer layers tend to be more functionally aligned. Deep swaps cause routing distributions to diverge significantly.</p>
+
+<h2 id="-future-work">🔮 Future Work</h2>
 
 <ul>
-  <li><a href="https://pytorch.org/">PyTorch</a> - Deep Learning Framework</li>
-  <li><a href="https://github.com/andrea-cavallo-98/STVNN">SpatioTemporal Neural Networks</a></li>
-  <li><a href="https://github.com/lehaifeng/T-GCN/tree/master">TGCN</a></li>
+  <li>Extend adapter-based analysis across all layer pairs</li>
+  <li>Measure perplexity degradation during expert swapping</li>
+  <li>Leverage functional similarity for <strong>dynamic expert routing</strong></li>
+  <li>Apply results to <strong>sparsity and compression</strong></li>
+  <li>Evaluate generalization to <strong>out-of-distribution</strong> data</li>
 </ul>
 
-<h2 id="authors">Authors</h2>
+<h2 id="-authors">👥 Authors</h2>
+
 <ul>
   <li><a href="https://github.com/Vamsi995">Sai Vamsi Alisetti</a></li>
-  <li><a href="https://github.com/vikaskalagi">Vikas Kalagi</a></li>
+  <li><a href="https://github.com/Abhi12122000">Abhishek Kumar</a></li>
 </ul>
+
+<h2 id="-resources">📎 Resources</h2>
+
+<ul>
+  <li>📄 <a href="https://drive.google.com/file/d/1OdAHZ2vjIHe34CT3864xsk_MvYrVxhoh/view?usp=sharing">Project Report</a></li>
+  <li>📊 <a href="https://docs.google.com/presentation/d/1JK6G4--TupMm0Y_bpSLhs93HhFvzDuwrkUw5C7wjdfM/edit?usp=sharing">Slides</a></li>
+</ul>
+
+<h2 id="-references">📚 References</h2>
+
+<ul>
+  <li>Switch Transformer: https://arxiv.org/abs/2101.03961</li>
+  <li>Universal Transformers: https://arxiv.org/abs/1807.03819</li>
+  <li>MoE-UT: https://arxiv.org/abs/2405.16039</li>
+  <li>Expert Merging: https://arxiv.org/pdf/2310.01334</li>
+</ul>
+
+<h2 id="-conclusion">💡 Conclusion</h2>
+
+<p>Our findings suggest that <strong>many MoE experts are functionally redundant across layers</strong>, and functional specialization is unevenly distributed. These insights pave the way for more <strong>efficient and interpretable</strong> MoE transformer architectures.</p>
+
 
         
       </section>
@@ -429,11 +464,11 @@
       
   <nav class="pagination">
     
-      <a href="/projects/%20Multi%20Agent%20Reinforcement%20Learning%20for%20Cooperative%20and%20Independent%20behaviors%20on%20Highways%20and%20Ring%20Roads/" class="pagination--pager" title="Capstone Project: MARL for Cooperative and Independent Behaviors on Highways and Ring Roads
+      <a href="/projects/Meetme/" class="pagination--pager" title="Meet.me
 ">Previous</a>
     
     
-      <a href="/projects/ExplainableSegmentAnything/" class="pagination--pager" title="Explainable Grounded Segment Anything
+      <a href="/projects/ParaphraseGen/" class="pagination--pager" title="Paraphrase Generator with T5 transformer
 ">Next</a>
     
   </nav>

@@ -12,9 +12,9 @@ sidebar:
   - title: "Role"
     text: "Team Lead"
   - title: "Responsibilities"
-    text: ""
+    text: "Proposed InterGAT-GRU, a novel spatio-temporal forecasting framework that achieved up to 21% higher accuracy and 60–70% faster training over GAT-GRU on real-world traffic datasets (SZ-Taxi, Los-Loop). Conducted spectral & community analysis on the learned interaction matrix, revealing high-rank eigenmodes,localized attention via IPR, and strong intra-cluster contrast aligned with latent spatial communities"
   - title: "Technology Frameworks & Languages"
-    text: "Python, PyTorch"
+    text: "Python, PyTorch, Pandas, Numpy, Colab"
 gallery:
   - url: /assets/images/unsplash-gallery-image-1.jpg
     image_path: assets/images/unsplash-gallery-image-1-th.jpg
@@ -26,6 +26,8 @@ gallery:
     image_path: assets/images/unsplash-gallery-image-3-th.jpg
     alt: "placeholder image 3"
 ---
+
+Please find the link to the paper [here](https://arxiv.org/pdf/2506.00770).
 
 Spatio-temporal forecasting is critical in applications such as traffic prediction, energy demand modeling, and weather monitoring. While Graph Attention Networks (GATs) are popular for modeling spatial dependencies, they rely on predefined adjacency structures and dynamic attention scores, introducing inductive biases and computational overhead that can obscure interpretability.
 

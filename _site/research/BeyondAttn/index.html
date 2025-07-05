@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>AWANTA: Adaptive Software-Defined Wide Area Network framework for Telehealth Access | Alisetti Sai Vamsi</title>
-<meta name="description" content="This project provides an emulator designed to simulate a small, fully connected mesh network with n nodes. The primary purpose of this emulator is to demonstrate and analyze network path changes under varying conditions. Our emulator performs a trace-driven simulation, leveraging real-world latency data obtained from RIPE Atlas nodes. By injecting these latency traces during iperf tests conducted between the start and destination nodes, we can replicate realistic network conditions and observe the effects on performance.">
+<!-- begin _includes/seo.html --><title>Beyond Attention: Learning Spatio-Temporal Dynamics with Emergent Interpretable Topologies | Alisetti Sai Vamsi</title>
+<meta name="description" content="Spatio-temporal forecasting is critical in applications such as traffic prediction, energy demand modeling, and weather monitoring. While Graph Attention Networks (GATs) are popular for modeling spatial dependencies, they rely on predefined adjacency structures and dynamic attention scores, introducing inductive biases and computational overhead that can obscure interpretability. We propose InterGAT, a simplified alternative to GAT that replaces masked attention with a fully learnable, symmetric node interaction matrix, capturing latent spatial relationships without relying on fixed graph topologies. Our framework, InterGAT-GRU, which incorporates a GRU-based temporal decoder, outperforms the baseline GAT-GRU in forecasting accuracy, achieving at least a 21% improvement on the SZ-Taxi dataset and a 6% improvement on the Los-Loop dataset across all forecasting horizons (15 to 60 minutes). Additionally, we observed reduction in training time by 60-70% compared to GAT-GRU baseline. Crucially, the learned interaction matrix reveals interpretable structure: it recovers sparse, topology-aware attention patterns that align with community structure. Spectral and clustering analyses show that the model captures both localized and global dynamics, offering insights into the functional topology driving predictions. This highlights how structure learning can simultaneously support prediction, computational efficiency, and topological interpretabil-ity in dynamic graph-based domains.">
 
 
   <meta name="author" content="Alisetti Sai Vamsi">
@@ -22,15 +22,15 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Alisetti Sai Vamsi">
-<meta property="og:title" content="AWANTA: Adaptive Software-Defined Wide Area Network framework for Telehealth Access">
-<meta property="og:url" content="http://localhost:4000/research/AWANTA/">
+<meta property="og:title" content="Beyond Attention: Learning Spatio-Temporal Dynamics with Emergent Interpretable Topologies">
+<meta property="og:url" content="http://localhost:4000/research/BeyondAttn/">
 
 
-  <meta property="og:description" content="This project provides an emulator designed to simulate a small, fully connected mesh network with n nodes. The primary purpose of this emulator is to demonstrate and analyze network path changes under varying conditions. Our emulator performs a trace-driven simulation, leveraging real-world latency data obtained from RIPE Atlas nodes. By injecting these latency traces during iperf tests conducted between the start and destination nodes, we can replicate realistic network conditions and observe the effects on performance.">
+  <meta property="og:description" content="Spatio-temporal forecasting is critical in applications such as traffic prediction, energy demand modeling, and weather monitoring. While Graph Attention Networks (GATs) are popular for modeling spatial dependencies, they rely on predefined adjacency structures and dynamic attention scores, introducing inductive biases and computational overhead that can obscure interpretability. We propose InterGAT, a simplified alternative to GAT that replaces masked attention with a fully learnable, symmetric node interaction matrix, capturing latent spatial relationships without relying on fixed graph topologies. Our framework, InterGAT-GRU, which incorporates a GRU-based temporal decoder, outperforms the baseline GAT-GRU in forecasting accuracy, achieving at least a 21% improvement on the SZ-Taxi dataset and a 6% improvement on the Los-Loop dataset across all forecasting horizons (15 to 60 minutes). Additionally, we observed reduction in training time by 60-70% compared to GAT-GRU baseline. Crucially, the learned interaction matrix reveals interpretable structure: it recovers sparse, topology-aware attention patterns that align with community structure. Spectral and clustering analyses show that the model captures both localized and global dynamics, offering insights into the functional topology driving predictions. This highlights how structure learning can simultaneously support prediction, computational efficiency, and topological interpretabil-ity in dynamic graph-based domains.">
 
 
 
-  <meta property="og:image" content="http://localhost:4000/assets/images/projects/Reward/Teaser.png">
+  <meta property="og:image" content="http://localhost:4000/assets/images/projects/BeyondAttn/Beyond%20Attention.png">
 
 
 
@@ -47,7 +47,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/research/AWANTA/">
+<link rel="canonical" href="http://localhost:4000/research/BeyondAttn/">
 
 
 
@@ -183,7 +183,7 @@
     
       
       
-        <li class="current">AWANTA: Adaptive Software-Defined Wide Area Network framework for Telehealth Access</li>
+        <li class="current">Beyond Attention: Learning Spatio-Temporal Dynamics with Emergent Interpretable Topologies</li>
       
     
   </ol>
@@ -219,7 +219,7 @@
     
       
       <h3>Link</h3>
-      <p><a href="https://github.com/KathiraveluLab/AWANTA/tree/main/modules/emulator">https://github.com/KathiraveluLab/AWANTA/tree/main/modules/emulator</a></p>
+      <p><a href="https://github.com/Vamsi995/Beyond-Attention">https://github.com/Vamsi995/Beyond-Attention</a></p>
 
       
     
@@ -231,13 +231,13 @@
     
       
       <h3>Responsibilities</h3>
-      <p>Developed open source trace driven software defined networking emulator using Mininet &amp; Ryu SDN, for establishing a global standard testbed for overlay routing algorithms. Leveraged RIPE Atlas latency traces to optimize traffic routing in northern Alaska, enhancing telehealth services and bridging healthcare gaps in underserved regions.</p>
+      <p>Proposed InterGAT-GRU, a novel spatio-temporal forecasting framework that achieved up to 21% higher accuracy and 60–70% faster training over GAT-GRU on real-world traffic datasets (SZ-Taxi, Los-Loop). Conducted spectral &amp; community analysis on the learned interaction matrix, revealing high-rank eigenmodes,localized attention via IPR, and strong intra-cluster contrast aligned with latent spatial communities</p>
 
       
     
       
       <h3>Technology Frameworks & Languages</h3>
-      <p>Python, Mininet, Ryu SDN</p>
+      <p>Python, PyTorch, Pandas, Numpy, Colab</p>
 
       
     
@@ -248,8 +248,8 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="AWANTA: Adaptive Software-Defined Wide Area Network framework for Telehealth Access">
-    <meta itemprop="description" content="This project provides an emulator designed to simulate a small, fully connected mesh network with n nodes. The primary purpose of this emulator is to demonstrate and analyze network path changes under varying conditions. Our emulator performs a trace-driven simulation, leveraging real-world latency data obtained from RIPE Atlas nodes. By injecting these latency traces during iperf tests conducted between the start and destination nodes, we can replicate realistic network conditions and observe the effects on performance.">
+    <meta itemprop="headline" content="Beyond Attention: Learning Spatio-Temporal Dynamics with Emergent Interpretable Topologies">
+    <meta itemprop="description" content="Spatio-temporal forecasting is critical in applications such as traffic prediction, energy demand modeling, and weather monitoring. While Graph Attention Networks (GATs) are popular for modeling spatial dependencies, they rely on predefined adjacency structures and dynamic attention scores, introducing inductive biases and computational overhead that can obscure interpretability. We propose InterGAT, a simplified alternative to GAT that replaces masked attention with a fully learnable, symmetric node interaction matrix, capturing latent spatial relationships without relying on fixed graph topologies. Our framework, InterGAT-GRU, which incorporates a GRU-based temporal decoder, outperforms the baseline GAT-GRU in forecasting accuracy, achieving at least a 21% improvement on the SZ-Taxi dataset and a 6% improvement on the Los-Loop dataset across all forecasting horizons (15 to 60 minutes). Additionally, we observed reduction in training time by 60-70% compared to GAT-GRU baseline. Crucially, the learned interaction matrix reveals interpretable structure: it recovers sparse, topology-aware attention patterns that align with community structure. Spectral and clustering analyses show that the model captures both localized and global dynamics, offering insights into the functional topology driving predictions. This highlights how structure learning can simultaneously support prediction, computational efficiency, and topological interpretabil-ity in dynamic graph-based domains.">
     <meta itemprop="datePublished" content="2025-07-04T17:29:43-07:00">
     
 
@@ -257,7 +257,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/research/AWANTA/" class="u-url" itemprop="url">AWANTA: Adaptive Software-Defined Wide Area Network framework for Telehealth Access
+            <a href="http://localhost:4000/research/BeyondAttn/" class="u-url" itemprop="url">Beyond Attention: Learning Spatio-Temporal Dynamics with Emergent Interpretable Topologies
 </a>
           </h1>
           
@@ -271,99 +271,18 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#getting-started">Getting Started</a><ul><li><a href="#prerequisites">Prerequisites</a></li><li><a href="#installation">Installation</a></li></ul></li><li><a href="#running-the-mininet-emulator">Running the Mininet Emulator</a><ul><li><a href="#custom-topology">Custom Topology</a></li></ul></li><li><a href="#running-the-ryu-controller">Running the Ryu Controller</a></li></ul>
+              
 
             </nav>
           </aside>
         
-        <div align="center">
-  <img src="/assets/images/AWANTA.png" alt="Project Header" />
-</div>
+        <p>Please find the link to the paper <a href="https://arxiv.org/pdf/2506.00770">here</a>.</p>
 
-<div align="center">
-  <h1>AWANTA SDN Emulator</h1>
-</div>
+<p>Spatio-temporal forecasting is critical in applications such as traffic prediction, energy demand modeling, and weather monitoring. While Graph Attention Networks (GATs) are popular for modeling spatial dependencies, they rely on predefined adjacency structures and dynamic attention scores, introducing inductive biases and computational overhead that can obscure interpretability.</p>
 
-<!-- <div align="center">
+<p>We propose InterGAT, a simplified alternative to GAT that replaces masked attention with a fully learnable, symmetric node interaction matrix, capturing latent spatial relationships without relying on fixed graph topologies. Our framework, InterGAT-GRU, which incorporates a GRU-based temporal decoder, outperforms the baseline GAT-GRU in forecasting accuracy, achieving at least a 21% improvement on the SZ-Taxi dataset and a 6% improvement on the Los-Loop dataset across all forecasting horizons (15 to 60 minutes). Additionally, we observed reduction in training time by 60-70% compared to GAT-GRU baseline.</p>
 
-  <a href="https://www.python.org/downloads/release/python-370/">![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)</a>
-  <a href="https://github.com/KathiraveluLab/AWANTA/blob/dev/CODE_OF_CONDUCT.md">![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)</a>
-  <a href="https://awanta-sdn-emulator.readthedocs.io/en/latest/?badge=latest">![Documentation Status](https://readthedocs.org/projects/awanta-sdn-emulator/badge/?version=latest)</a>
-  <a href="https://github.com/KathiraveluLab/AWANTA/discussions">![Discussion](https://img.shields.io/badge/Discuss-Ask%20Questions-blue])</a>
-
-</div> -->
-
-<p>This project provides an emulator designed to simulate a small, fully connected mesh network with n nodes. The primary purpose of this emulator is to demonstrate and analyze network path changes under varying conditions.
-Our emulator performs a trace-driven simulation, leveraging real-world latency data obtained from RIPE Atlas nodes. By injecting these latency traces during iperf tests conducted between the start and destination nodes, we can replicate realistic network conditions and observe the effects on performance.</p>
-
-<h2 id="getting-started">Getting Started</h2>
-
-<p>These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.</p>
-
-<h3 id="prerequisites">Prerequisites</h3>
-
-<ul>
-  <li>Mininet</li>
-  <li>Ryu SDN Controller</li>
-  <li>Python 3.7+</li>
-</ul>
-
-<h3 id="installation">Installation</h3>
-
-<ul>
-  <li>Mininet</li>
-</ul>
-
-<blockquote>
-  <p>Download Mininet Framework</p>
-  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Follow this quickstart guide
-http://mininet.org/download/
-</code></pre></div>  </div>
-</blockquote>
-
-<blockquote>
-  <p>Python Drivers</p>
-  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install mininet
-</code></pre></div>  </div>
-</blockquote>
-
-<ul>
-  <li>Ryu SDN
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Follow the installation setup here
-https://ryu-sdn.org/
-</code></pre></div>    </div>
-  </li>
-  <li>Python 3.7+
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Download python 3.7+ binaries from here
-https://www.python.org/downloads/
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h2 id="running-the-mininet-emulator">Running the Mininet Emulator</h2>
-
-<p>To run with the given topology, please run this command.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo python run_topology.py -topo &lt;custom_topology_class&gt;
-</code></pre></div></div>
-
-<h3 id="custom-topology">Custom Topology</h3>
-
-<p>For example, create a custom mininet topology class under network_manager/custom_topologies and register it under a name of your choice under network_manager/custom_topologies/<strong>init</strong>.py in the topology_map variable.</p>
-
-<p>For an illustration a full_mesh_topology class has been created and is used by default when no topology is given in the command line interface.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo python3 -topo full_mesh_topology
-</code></pre></div></div>
-<p>Please do note that mininet requires sudo access, so when running these commands, don’t forget to use sudo.</p>
-
-<h2 id="running-the-ryu-controller">Running the Ryu Controller</h2>
-
-<p>To start the ryu controller, install the ryu package from pip or build it from source. And run the controller file.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ryu-manager --observe-links modules/emulator/controller.py
-</code></pre></div></div>
-
-<p>The controller has a configuration file <code class="language-plaintext highlighter-rouge">controller.conf</code>, which contains the trace_manager to use and the routing strategy to use. These variables are passed through the .conf file because ryu controller does not allow command line arguments in the shell.</p>
-
+<p>Crucially, the learned interaction matrix reveals interpretable structure: it recovers sparse, topology-aware attention patterns that align with community structure. Spectral and clustering analyses show that the model captures both localized and global dynamics, offering insights into the functional topology driving predictions. This highlights how structure learning can simultaneously support prediction, computational efficiency, and topological interpretabil-ity in dynamic graph-based domains.</p>
 
         
       </section>
@@ -384,11 +303,11 @@ https://www.python.org/downloads/
       
   <nav class="pagination">
     
-      <a href="/research/%20Multi%20Agent%20Reinforcement%20Learning%20for%20Cooperative%20and%20Independent%20behaviors%20on%20Highways%20and%20Ring%20Roads/" class="pagination--pager" title="Capstone Project: MARL for Cooperative and Independent Behaviors on Highways and Ring Roads
+      <a href="/research/AWANTA/" class="pagination--pager" title="AWANTA: Adaptive Software-Defined Wide Area Network framework for Telehealth Access
 ">Previous</a>
     
     
-      <a href="/research/BeyondAttn/" class="pagination--pager" title="Beyond Attention: Learning Spatio-Temporal Dynamics with Emergent Interpretable Topologies
+      <a href="/research/NetworkMeasurements/" class="pagination--pager" title="Network measurements for telehealth optimizations understanding internet paths in remote regions
 ">Next</a>
     
   </nav>

@@ -83,6 +83,12 @@ var store = [{
         "url": "/projects/Meetme/",
         "teaser": "/assets/images/projects/Meetme/Meetme-teaser.png"
       },{
+        "title": "MoE Align: Quantifying Expert Similarity Across Transformer Layers",
+        "excerpt":"🧠 Overview Modern Mixture-of-Experts (MoE) transformers activate a subset of expert functions per token, enabling large-scale models with efficient inference. These expert layers are usually assumed to be depth-specific and non-interchangeable. This project explores whether experts across layers perform functionally similar transformations, making cross-layer expert reuse feasible. 🔍 Core Idea...","categories": [],
+        "tags": [],
+        "url": "/projects/MoEAlign/",
+        "teaser": "/assets/images/projects/MoEAlign/activations.png"
+      },{
         "title": "Paraphrase Generator with T5 transformer",
         "excerpt":"A Paraphrase-Generator built using transformers which takes an English sentence as an input and produces a set of paraphrased sentences. This is an NLP task of conditional text-generation. The model used here is the T5ForConditionalGeneration from the huggingface transformers library. This model is trained on the Google’s PAWS Dataset and...","categories": [],
         "tags": [],
@@ -131,17 +137,23 @@ var store = [{
         "url": "/research/AWANTA/",
         "teaser": "/assets/images/projects/Reward/Teaser.png"
       },{
+        "title": "Beyond Attention: Learning Spatio-Temporal Dynamics with Emergent Interpretable Topologies",
+        "excerpt":"Please find the link to the paper here. Spatio-temporal forecasting is critical in applications such as traffic prediction, energy demand modeling, and weather monitoring. While Graph Attention Networks (GATs) are popular for modeling spatial dependencies, they rely on predefined adjacency structures and dynamic attention scores, introducing inductive biases and computational...","categories": [],
+        "tags": [],
+        "url": "/research/BeyondAttn/",
+        "teaser": "/assets/images/projects/BeyondAttn/Beyond%20Attention.png"
+      },{
+        "title": "Network measurements for telehealth optimizations understanding internet paths in remote regions",
+        "excerpt":"Please find the link to the paper here. Telehealth primarily relies on the availability of reliable Internet connectivity. However, Internet access can be challenging in remote regions far from the major Internet hubs. Such poor connectivity can prevent access to telehealth, where there is a tremendous need due to limited...","categories": [],
+        "tags": [],
+        "url": "/research/NetworkMeasurements/",
+        "teaser": "/assets/images/projects/Reward/Teaser.png"
+      },{
         "title": "Paraphrase Generator with T5 transformer",
         "excerpt":"A Paraphrase-Generator built using transformers which takes an English sentence as an input and produces a set of paraphrased sentences. This is an NLP task of conditional text-generation. The model used here is the T5ForConditionalGeneration from the huggingface transformers library. This model is trained on the Google’s PAWS Dataset and...","categories": [],
         "tags": [],
         "url": "/research/ParaphraseGen/",
         "teaser": "/assets/images/projects/Paraphrase/nlp.png"
-      },{
-        "title": "Beyond Attention: Learning Spatio-Temporal Dynamics with Emergent Interpretable Topologies",
-        "excerpt":"Spatio-temporal forecasting is critical in applications such as traffic prediction, energy demand modeling, and weather monitoring. While Graph Attention Networks (GATs) are popular for modeling spatial dependencies, they rely on predefined adjacency structures and dynamic attention scores, introducing inductive biases and computational overhead that can obscure interpretability. We propose InterGAT,...","categories": [],
-        "tags": [],
-        "url": "/research/SparseReward%20copy/",
-        "teaser": "/assets/images/projects/BeyondAttn/Beyond%20Attention.png"
       },{
         "title": "Sparse Reward Propagation for Deep Reinforcement Learning",
         "excerpt":"This work is based on the paper Reward Propagation using Graph Convolutional Networks using the Proto Value Functions by Mahadevan and Maggioni as features to the GCN. The underlying MDP of the Gridworld is captured as a graph which is then used to calculate the Proto Value Functions. The implementation...","categories": [],
