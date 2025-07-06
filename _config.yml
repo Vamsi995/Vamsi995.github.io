@@ -106,7 +106,7 @@ analytics:
 # Site Author
 author:
   name             : "Alisetti Sai Vamsi"
-  avatar           : assets/images/author.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : assets/images/image.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Educating, Learning, Revolutionizing Tech"
   location         : "Hyderabad, India"
   email            :

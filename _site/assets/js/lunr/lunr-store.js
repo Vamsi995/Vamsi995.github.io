@@ -183,7 +183,7 @@ var store = [{
     "excerpt":"Indian Institute of Technology (IIT) Palakkad                                       (2018-2022) Course Work (CSE) Introduction to Programming Logic for Computing Data Structures and Algorithms Discrete Mathematics for Computer Science Design and Analysis of Algorithms Theory...","url": "http://localhost:4000/education/"
   },{
     "title": null,
-    "excerpt":" Hey Everyone!        I am a Master's Student in Computer Science at the University of California, Santa Barbara. I have done my Bachelors in Computer Science from IIT Palakkad. I am primarily interested in machine learning, specifically in Graph Machine Learning and Reinforcement Learning.      ","url": "http://localhost:4000/"
+    "excerpt":"Hey Everyone! I am a Master’s student in Computer Science at the University of California, Santa Barbara, and a graduate of the Indian Institute of Technology (IIT) Palakkad, where I earned my Bachelor's degree in Computer Science. My current research focuses on Transformers and Large Language Models (LLMs), with particular...","url": "http://localhost:4000/"
   },{
     "title": null,
     "excerpt":"var idx = lunr(function () { this.field('title') this.field('excerpt') this.field('categories') this.field('tags') this.ref('id') this.pipeline.remove(lunr.trimmer) for (var item in store) { this.add({ title: store[item].title, excerpt: store[item].excerpt, categories: store[item].categories, tags: store[item].tags, id: item }) } }); $(document).ready(function() { $('input#search').on('keyup', function () { var resultdiv = $('#results'); var query = $(this).val().toLowerCase(); var result = idx.query(function...","url": "http://localhost:4000/assets/js/lunr/lunr-en.js"
