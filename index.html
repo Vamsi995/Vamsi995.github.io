@@ -1,19 +1,69 @@
----
-layout: landing
-carousels:
-    - images:
-        - image: /assets/images/landing/Me.jpg
-        - image: /assets/images/landing/Mangalore.jpg
-        - image: /assets/images/landing/Ships.jpg
-        - image: /assets/images/landing/Group.jpg
+<!doctype html>
+</head>
+<body>
+<header class="site-header">
+<h1>Sai Vamsi Alisetti</h1>
+<nav aria-label="Primary">
+<ul class="nav">
+<li><a href="/">Home</a></li>
+<li><a href="/interests/airplanes/">Interests: Airplanes</a></li>
+<li><a href="#expert-topics">Expert Topics</a></li>
+</ul>
+</nav>
+</header>
 
-classes: wide
-author_profile: true
----
-<link rel="stylesheet" href="./academicons-1.9.4/css/academicons.min.css"/>
-<h1 align="center">Hey Everyone!</h1>
-<br>
-<span align="center">
-   I am a Master’s student in Computer Science at the University of California, Santa Barbara, and a graduate of the Indian Institute of Technology (IIT) Palakkad, where I earned my Bachelor's degree in Computer Science. My current research focuses on Transformers and Large Language Models (LLMs), with particular interest in model efficiency, routing mechanisms, and architectural innovations such as Mixture-of-Experts (MoE), adapter-based tuning, and speculative decoding. I am broadly motivated by challenges at the intersection of language understanding, scaling laws, and structured reasoning in LLMs.
 
-Previously, I worked on problems in Graph Machine Learning and Reinforcement Learning, and I continue to draw on that experience when designing structured attention mechanisms or analyzing inductive biases in large models. I am passionate about building scalable, interpretable learning systems that bridge theoretical foundations and real-world deployment.
+<main>
+<section class="bio">
+<h2>About Me</h2>
+<p>
+I'm a CS graduate student at UCSB focusing on Graph ML and Mixture‑of‑Experts LLMs.
+I enjoy building fast, interpretable models and productionizing ML systems.
+</p>
+<figure>
+<img src="/assets/me.jpg" alt="Portrait of Sai Vamsi Alisetti" class="profile" />
+<figcaption>Hi! Nice to meet you.</figcaption>
+</figure>
+</section>
+
+
+<section>
+<h2>Source Code</h2>
+<p>
+View this site's repository on GitHub:
+<a href="REPLACE_WITH_YOUR_REPO_URL" rel="noopener">github.com/&lt;your‑user&gt;/&lt;your‑repo&gt;</a>
+</p>
+</section>
+
+
+<section id="expert-topics">
+<h2>Expert Topics</h2>
+<div id="expert-topics">
+<ul>
+<li>Graph Attention Networks (GAT/GATv2) and Spatio‑Temporal Forecasting</li>
+<li>Mixture‑of‑Experts Transformers (routing, depth‑aware, layer merging)</li>
+<li>Scaling & performance engineering (DeepSpeed, ZeRO, A100 GPUs)</li>
+</ul>
+</div>
+</section>
+
+
+<section>
+<h2>Interests</h2>
+<p>
+I maintain topic pages under <code>/interests/</code>. Try
+<a href="/interests/airplanes/">/interests/airplanes</a>.
+</p>
+</section>
+</main>
+
+
+<footer class="site-footer">
+<small>© <span id="year"></span> Sai Vamsi Alisetti</small>
+<script>
+// small progressive enhancement; valid HTML5 allows script, and no inline styles are used
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</footer>
+</body>
+</html>
